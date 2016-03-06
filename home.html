@@ -179,155 +179,6 @@
     });
   </script>
   <script>
-    //- Overview Window
-    //- close window on click x
-    $('.overviewClose').click(function(){
-    $('.windowOverview').css("display", "none")
-    });
-    //-minimize overview click - and add folder to dock
-    $('.overviewMin').click(function(){
-    $('.windowOverview').css("display", "none")
-    $('.minFolderOverview').css("display", "block")
-    $('#dock').css("min-width", "")
-    //$('.overviewDesc').css("display", "block")
-    });
-    //- open on overiew doubleclick and remove folder from dock
-    $('#iconOverview').dblclick(function(){
-    $('.windowOverview').css("display", "block")
-    $('.minFolderOverview').css("display", "none")
-    
-    });
-    
-    $('#iconOverview').dblclick(function(){
-    $('.windowOverview').css({
-    "display": "block",
-    "position": "absolute",
-    "top": "12%",
-    "left": "80px",
-    
-    })
-    
-    $('.minFolderOverview').css("display", "none")
-    });
-    //- open window from dock
-    $('.minFolderOverview').click(function(){
-    $('.windowOverview').css("display", "block")
-    $('.minFolderOverview').css("display", "none")
-    });
-    
-    
-    //About Window
-    //- close window on click x
-    $('.aboutClose').click(function(){
-    $('.windowAbout').css("display", "none")
-    });
-    //-minimize overview click - and add folder to dock
-    $('.aboutMin').click(function(){
-    $('.windowAbout').css("display", "none")
-    $('.minFolderAbout').css("display", "block")
-    $('#dock').css("min-width", "")
-    //$('.aboutDesc').css("display", "block")
-    });
-    //- open on overiew doubleclick and remove folder from dock
-    $('#iconAbout').dblclick(function(){
-    $('.windowAbout').css("display", "block")
-    $('.minFolderAbout').css("display", "none")
-    
-    });
-    
-  </script>
-  <script>
-    $('#iconAbout').dblclick(function(){
-    $('.windowAbout').css({
-    "display": "block",
-    "position": "absolute",
-    "top": "16%",
-    "left": "100px",
-    
-    
-    })
-    $('.minFolderAbout').css("display", "none")
-    });
-    //- open window from dock
-    $('.minFolderAbout').click(function(){
-    $('.windowAbout').css("display", "block")
-    $('.minFolderAbout').css("display", "none")
-    });
-    
-    //- Settings Window
-    //- close window on click x
-    $('.settingsClose').click(function(){
-    $('.windowSettings').css("display", "none")
-    });
-    //-minimize settings click 
-    $('.settingsMin').click(function(){
-    $('.windowSettings').css("display", "none")
-    
-    });
-    
-    
-    
-    //- open settings window from dock
-  </script>
-  <script>
-    $('#dock6').click(function(){
-    $('.windowSettings').css({
-    "display": "block",
-    "position": "absolute",
-    "top": "20%",
-    "left": "120px",
-    
-    })
-    
-    });
-    
-    //Email Window
-    //- close window on click x
-    $('.emailClose').click(function(){
-    $('.windowEmail').css("display", "none")
-    });
-    //-minimize email click 
-    $('.emailMin').click(function(){
-    $('.windowEmail').css("display", "none")
-    
-    });
-    
-    // open email window from dock
-    $('#dock5').click(function(){
-    $('.windowEmail').css({
-    "display": "block",
-    "position": "absolute",
-    "top": "24%",
-    "left": "140px",
-    
-    })
-    
-    });
-    
-  </script>
-  <script>
-    $('.help').click(function(){
-    $('.windowHelp').css({
-    "display": "block",
-    "position": "absolute"
-    })
-    });
-    $('.helpClose').click(function(){
-    $('.windowHelp').css("display", "none")
-    $('.help').css('background-color', '');
-    });
-    
-  </script>
-  <script>
-    $(".help").click(function(){
-    if ($('.windowHelp').css('display') === "block") {
-    $('.help').css('background-color', '#B1B1B1');
-    }  
-    });
-    
-    //resizable
-  </script>
-  <script>
     $(function() {
     $( ".windowOverview" ).resizable({
     minWidth: 550, 
@@ -420,6 +271,15 @@
     $('.background5').click(function() {
     $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
     });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </script>
-  <script></script>
 </html>
