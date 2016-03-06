@@ -15,11 +15,20 @@ body {
   background-color: rgba(245, 245, 245, 0.8);
   position: fixed;
   top: 0;
-  box-shadow: 0px 0px 25px 5px #888888;
+  box-shadow: 0px 0px 22px 0px #888888;
   z-index: 999;
 }
 .wrapper #topNav .help {
   background-color: none;
+  cursor: default;
+}
+.wrapper #topNav li:hover {
+  background: linear-gradient(180deg, #bde0f1, #33a0d6);
+  cursor: default;
+}
+.wrapper #topNav li.glyphicon:hover {
+  background: none;
+  cursor: default;
 }
 
 ul {
@@ -75,6 +84,24 @@ ul.right li {
   top: 160px;
 }
 
+#iconPortfolio {
+  position: absolute;
+  right: 20px;
+  top: 260px;
+}
+
+#iconWelcome {
+  position: absolute;
+  right: 20px;
+  top: 360px;
+}
+
+#iconBooks {
+  position: absolute;
+  right: 20px;
+  top: 460px;
+}
+
 .desktop_icon {
   min-width: 120px;
   cursor: pointer;
@@ -91,30 +118,18 @@ ul.right li {
   text-shadow: 0px 2px 8px #111111;
 }
 
-.window {
-  height: 350px;
-  width: 550px;
-  background-color: whitesmoke;
-  border-radius: 5px;
-  z-index: 999;
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
-}
 .window .windowBar {
   height: 40px;
-  background: linear-gradient(180deg, #cacaca, #b1b1b1);
+  background: #e7eaed;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  cursor: move;
 }
 .window .windowBar ul.button {
   display: inline-block;
 }
 .window .windowBar ul.tab {
   display: inline-block;
-  position: relative;
-  left: 43%;
-  bottom: 3px;
-  transform: translate(-100%);
+  cursor: default;
 }
 .window .windowBar ul.tab li {
   padding: 3px 12px;
@@ -126,14 +141,14 @@ ul.right li {
   cursor: auto;
 }
 .window .glyphicon-remove-sign {
-  color: rgba(245, 245, 245, 0.8);
+  color: #cacaca;
   margin: 10px 2px 0 10px;
 }
 .window .glyphicon-remove-sign:hover {
   color: #ff6d61;
 }
 .window .glyphicon-minus-sign {
-  color: rgba(245, 245, 245, 0.8);
+  color: #cacaca;
   margin: 10px 2px 0 2px;
 }
 .window .glyphicon-minus-sign:hover {
@@ -212,10 +227,22 @@ ul.right li {
 
 .windowAbout {
   display: none;
+  height: 350px;
+  width: 550px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 .windowSettings {
   display: none;
+  height: 350px;
+  width: 550px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
 .windowSettings .setting {
   margin: 0;
@@ -238,7 +265,7 @@ ul.right li {
   border: 0;
   border-radius: 0px;
   color: rgba(1, 1, 1, 0.7);
-  background: linear-gradient(180deg, #cacaca, #b1b1b1);
+  background: linear-gradient(180deg, #e7eaed, #b1b1b1);
   cursor: pointer;
 }
 .windowSettings .setting .wallpaper button:hover {
@@ -254,9 +281,16 @@ ul.right li {
 }
 
 .windowOverview {
+  display: none;
   position: relative;
   top: 12%;
   left: 80px;
+  height: 350px;
+  width: 550px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
 .windowHelp {
@@ -299,14 +333,45 @@ ul.right li {
 
 .windowEmail {
   display: none;
+  height: 350px;
+  width: 550px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
 .windowEmail input {
   width: 100%;
   padding: 5px 0;
+  background: whitesmoke;
+  border: 0;
+}
+.windowEmail input:focus {
+  outline: none;
+}
+.windowEmail input::-webkit-input-placeholder {
+  font-weight: 700;
 }
 .windowEmail textarea {
-  height: 200px;
+  min-height: 200px;
   width: 100%;
   max-width: 100%;
   max-height: 200px;
+  margin: 5px 0 0 0;
+  border: 0;
+  background: whitesmoke;
+  resize: none;
+  border-top: 1px solid #cacaca;
+}
+.windowEmail textarea:focus {
+  outline: none;
+}
+.windowEmail input[type=submit] {
+  border: 1px solid #cacaca;
+  border-radius: 0px;
+  position: absolute;
+  bottom: 0;
+}
+.windowEmail input[type=submit]:hover {
+  background: linear-gradient(180deg, #a3ffa3, #b1ffb1);
 }

@@ -1,51 +1,65 @@
 $bar: rgb(245,245,245)
 $transp-bar: rgba(245,245,245,0.8)
-
+$green: #66ff66
 $dark-gray: #858585
 $light-gray: #CACACA
 $tab-gray:#B1B1B1
 $white: #eeeeee
 $blue: #0088cc
+$blueButton: linear-gradient(180deg, #BDE0F1, #33A0D6)
+$grey-blue: #e7eaed
 $red: #FF6D61
 $yellow: #FFC661
 $transp-text: rgba(1,1,1,0.6)
+$windowBar: linear-gradient(180deg, #cbcbcb, #d7d7d7)
+$emailButton: linear-gradient(180deg, #A3FFA3, #B1FFB1)
 
 
 body
     margin: 0
     overflow: hidden
 
-    
+
 .wrapper
     max-width: 100%
     height: 100vh
     background-image: url(images/wallpaper2.jpg)
     background-size: cover
-    
-    
+
+
     #topNav
         width: 100%
         max-height: 22px
         background-color: $transp-bar
         position: fixed
         top: 0
-        box-shadow: 0px 0px 25px 5px #888888
+        box-shadow: 0px 0px 22px 0px #888888
         z-index: 999
-    
+
         .help
             background-color: none
-        
+            cursor: default
+
+        li
+            &:hover
+                background: $blueButton
+                cursor: default
+        li.glyphicon
+            &:hover
+                background: none
+                cursor: default
 ul
-    list-style-type: none 
+    list-style-type: none
     padding: 0
-    
+
 .glyphicon-apple
     padding: 0 0 0 20px
-    
+
+
 .glyphicon
     top: 0
     font-size: 18px
-    
+
 ul.left
     display: block
     float: left
@@ -55,10 +69,10 @@ ul.left
         padding: 0 10px
         font-size: 16px
         font-weight: 500
-        
+
     li.bold
         font-weight: 900
-        
+
 ul.right
     display: block
     float: right
@@ -74,107 +88,110 @@ ul.right
     position: absolute
     right: 20px
     top: 60px
-    
-    
+
+
 #iconAbout
     position: absolute
     right: 20px
     top: 160px
-        
+
+#iconPortfolio
+    position: absolute
+    right: 20px
+    top: 260px
+
+#iconWelcome
+    position: absolute
+    right: 20px
+    top: 360px
+#iconBooks
+    position: absolute
+    right: 20px
+    top: 460px
+
+
 .desktop_icon
     min-width: 120px
     cursor: pointer
-    
-    
-    img 
+
+
+    img
         height: auto
         width: 72px
-        
-        
-    p 
+
+
+    p
         width: 72px
         text-align: center
         font-weight: 700
         color: rgb(245,245,245)
         text-shadow: 0px 2px 8px #111111
-       
+
 .window
-    height: 350px
-    width: 550px
-    background-color: rgba(245,245,245,1)
-    //position: relative
-    //top: 15%
-    //left: 50px
-    border-radius: 5px
-    z-index: 999
-    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
-    
-    
+
+
     .windowBar
         height: 40px
-        background: linear-gradient(180deg, $light-gray, $tab-gray)
+        background: $grey-blue
         border-top-left-radius: 5px
         border-top-right-radius: 5px
-        cursor: move
-        
+
+
         ul.button
             display: inline-block
-        
+
         ul.tab
             display: inline-block
-            position: relative
-            left: 43%
-            bottom: 3px
-            transform: translate(-100%)
-            
-            
+            cursor: default
+
+
             li
                 //background-color: $tab-gray
                 padding: 3px 12px
                 font-weight: 900
-                
+
                 //border-radius: 5px
                 color: rgba(1,1,1,0.6)
                 letter-spacing: 0px
-                
+
     .glyphicon
         cursor: auto
-            
+
     .glyphicon-remove-sign
-        color: $transp-bar
+        color: $light-gray
         margin: 10px 2px 0 10px
         &:hover
             color: $red
     .glyphicon-minus-sign
-        color: $transp-bar
+        color: $light-gray
         margin: 10px 2px 0 2px
         &:hover
-            color: $yellow 
-        
-        
-        
+            color: $yellow
+
+
+
     .windowIcon
         width: 32%
         float: left
-        
+
         img
             position: absolute
-            top: 60% 
+            top: 60%
             transform: translate(0%, -60%)
             height: 300px
-            
+
     .about
         text-align: left
         width: 66%
         float: right
-        
+
         p
             font-weight: 700
             span
                 font-weight: 300
                 padding-left: 10px
-            
-            
+
+
 #dock
     position: fixed
     bottom: -5px
@@ -185,25 +202,25 @@ ul.right
     max-width: 90%
     background-color: rgba(151,151,151,0.9)
     border-radius: 5px
-    
-   
-        
+
+
+
     img
-        
+
         height: 60px
         width:  60px
         margin: 10px 5px 5px 5px
         float: right
         cursor: pointer
-        
-            
-        
+
+
+
     span.border
         border-left: 2px solid gray
         position: relative
         top: 10px
         bottom: 20px
-        
+
     .minFolderOverview
         float: left
         display: none
@@ -212,42 +229,54 @@ ul.right
         display: none
 #sort
     float: left
-        
-        
+
+
 #noSort
     float: right
-    
+
     p
         position: relative
         top: -10px
         left: 4px
         display: none
         font-weight: 700
-        
-    
+
+
 .windowAbout
     display: none
     //font-family: monospace;
-    
-.windowSettings    
+    height: 350px
+    width: 550px
+    background-color: rgba(245,245,245,1)
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+
+.windowSettings
     display: none
-    
-    
+    height: 350px
+    width: 550px
+    background-color: rgba(245,245,245,1)
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+
+
     .setting
         margin: 0
         display: block
-        
-        .wallpaper   
+
+        .wallpaper
             margin: 2%
             width: 150px
-            
-            
+
+
             h4
                 border-bottom: 1px solid $light-gray
                 color: $transp-text
                 text-align: center
                 font-weight: 700
-            
+
             button
                 width: 150px
                 margin: 5px 0
@@ -255,24 +284,31 @@ ul.right
                 border: 0
                 border-radius: 0px
                 color: rgba(1,1,1,0.7)
-                background: linear-gradient(180deg, $light-gray, $tab-gray)
+                background: linear-gradient(180deg, $grey-blue, $tab-gray)
                 cursor: pointer
-                
+
                 &:hover
                     background: linear-gradient(180deg, #7DB1E5, #97C1EA)
-                    
-                
+
+
                 &:active
                     background: -webkit-linear-gradient(0deg, $light-gray, $tab-gray)
                     background: -o-linear-gradient(0deg, $light-gray, $tab-gray)
                     background: linear-gradient(0deg, $light-gray, $tab-gray)
-                
+
                 &:focus
                     outline: 0
 .windowOverview
+    display: none
     position: relative
     top: 12%
     left: 80px
+    height: 350px
+    width: 550px
+    background-color: rgba(245,245,245,1)
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
 
 .windowHelp
     display: none
@@ -287,8 +323,8 @@ ul.right
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
     .helpText
         text-align: left
-        
-        
+
+
         button
             width: 100%
             position: absolute
@@ -312,19 +348,49 @@ ul.right
             &:focus
                 outline: 0
 
-            
+
+
+
 .windowEmail
     display: none
-    
-   
+    height: 350px
+    width: 550px
+    background-color: rgba(245,245,245,1)
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+
+
 
 
 
     input
         width: 100%
         padding: 5px 0
+        background: rgba(245,245,245,1)
+        border: 0
+        &:focus
+            outline: none
+    input::-webkit-input-placeholder
+        font-weight: 700
+
     textarea
-        height: 200px
+        min-height: 200px
         width: 100%
         max-width: 100%
         max-height: 200px
+        margin: 5px 0 0 0
+        border: 0
+        background: rgba(245,245,245,1)
+        resize: none
+        border-top: 1px solid $light-gray
+
+        &:focus
+            outline: none
+    input[type=submit]
+        border: 1px solid $light-gray
+        border-radius: 0px
+        position: absolute
+        bottom: 0
+        &:hover
+            background: $emailButton
