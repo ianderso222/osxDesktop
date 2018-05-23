@@ -164,6 +164,80 @@ $('.windowPortfolio').css({
 })
 $('.minFolderPortfolio').css("display", "none")
 });
+///////////////////////////////
+//Paint Window
+//- close window on click x
+$('#paintClose').click(function(){
+$('.windowPaint').css("display", "none")
+});
+//-minimize overview click - and add folder to dock
+$('#paintMin').click(function(){
+$('.windowPaint').css("display", "none")
+$('.minFolderPaint').css("display", "inline-block")
+$('#dock').css("min-width", "")
+//$('.aboutDesc').css("display", "block")
+});
+//- open on overiew doubleclick and remove folder from dock
+$('#iconPaint').click(function(){
+$('.windowPaint').css("display", "block")
+$('.minFolderPaint').css("display", "none")
+
+});
+$('#iconPaint').click(function(){
+$('.windowPaint').css({
+"display": "block",
+"position": "absolute",
+"z-index": ++z,
+//"position": "absolute",
+//"top": "20%",
+//"left": "80px",
+
+})
+$('.minFolderPaint').css("display", "none")
+});
+//- open window from dock
+$('.minFolderPaint').click(function(){
+$('.windowPaint').css({
+    "display": "block",
+    "z-index": ++z
+})
+$('.minFolderPaint').css("display", "none")
+});
+// paint onClick function
+$("#canvasDiv").on("click", function(e){
+e.preventDefault();
+console.log("party")
+
+var canvas = document.getElementById("canvasDiv");
+var ctx = canvas.getContext("2d");
+
+document.addEventListener('mousemove', draw);
+document.addEventListener('mouseenter', getMousePos);
+document.addEventListener('mousedown', getMousePos);
+
+function draw(e) {
+		if (e.buttons !== 1) return;
+    var pos = getMousePos(canvas, e);
+    var color = document.getElementById('hex').value;
+    
+    posx = pos.x;
+    posy = pos.y;
+    ctx.fillStyle = color;
+    ctx.fillRect(posx-2, posy-2, 8, 8);
+}
+
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
+
+
+});
+
+/////////////////////////////////////////////////////////////////////////////////
 //- Settings Window
 //- close window on click x
 $('.settingsClose').click(function(){
@@ -213,7 +287,7 @@ $('.windowGallery, #cate').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#forest, #personal, #ewf, #taco, #news, #prompts").css('display', 'none')
+$("#forest, #personal, #ewf, #taco, #news, #prompts, #weather").css('display', 'none')
 });
 
 $('#itemForest').click(function(){
@@ -222,7 +296,7 @@ $('.windowGallery, #forest').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #personal, #ewf, #taco, #news, #prompts ").css('display', 'none')
+$("#cate, #personal, #ewf, #taco, #news, #prompts, #weather ").css('display', 'none')
 });
 
 $('#itemPersonal').click(function(){
@@ -231,7 +305,7 @@ $('.windowGallery, #personal').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #ewf, #taco, #news, #prompts ").css('display', 'none')
+$("#cate, #forest, #ewf, #taco, #news, #prompts, #weather ").css('display', 'none')
 });
 
 $('#itemEWF').click(function(){
@@ -240,7 +314,7 @@ $('.windowGallery, #ewf').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #taco, #news, #prompts ").css('display', 'none')
+$("#cate, #forest, #personal, #taco, #news, #prompts, #weather ").css('display', 'none')
 });
 
 $('#itemTaco').click(function(){
@@ -249,17 +323,10 @@ $('.windowGallery, #taco').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #ewf, #news, #prompts ").css('display', 'none')
+$("#cate, #forest, #personal, #ewf, #news, #prompts, #weather ").css('display', 'none')
 });
 
-$('#itemNews').click(function(){
-$('.windowGallery, #news').css({
-"display": "block",
-"position": "absolute",
-"z-index": ++z
-})
-$("#cate, #forest, #personal, #ewf, #taco, #prompts ").css('display', 'none')
-});
+
 
 $('#itemPrompt').click(function(){
 $('.windowGallery, #prompts').css({
@@ -267,7 +334,38 @@ $('.windowGallery, #prompts').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #ewf, #taco, #news ").css('display', 'none')
+$("#cate, #forest, #personal, #ewf, #taco, #news, #weather ").css('display', 'none')
+});
+
+$('#itemWeather').click(function(){
+$('.windowGallery, #weather').css({
+"display": "block",
+"position": "absolute",
+"z-index": ++z
+})
+$("#cate, #forest, #personal, #ewf, #taco, #prompts, #news ").css('display', 'none')
+});
+
+//settings hide and show
+
+$('.settingsButton').click(function(){
+    $('.backgroundChange').css('display', 'inline-block')
+    $('.visibilityChange').css('display', 'none')
+});
+$('.visibilityButton').click(function(){
+    $('.visibilityChange').css('display', 'inline-block')
+    $('.backgroundChange').css('display', 'none')
+});
+
+// Transparency change
+$('.transOn').click(function(){
+    $('#topNav').css('background-color', '')
+    $('#dock').css('background-color', '')
+});
+
+$('.transOff').click(function(){
+    $('#topNav').css('background-color', 'rgba(245,245,245,1)')
+    $('#dock').css('background-color', 'rgba(151,151,151,1)')
 });
 
 

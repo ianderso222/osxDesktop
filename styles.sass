@@ -3,7 +3,7 @@ $transp-bar: rgba(245,245,245,0.8)
 $green: #66ff66
 $dark-gray: #858585
 $light-gray: #CACACA
-$tab-gray:#B1B1B1
+$tab-gray: #B1B1B1
 $white: #eeeeee
 $blue: #0088cc
 $blueButton: linear-gradient(180deg, #BDE0F1, #33A0D6)
@@ -100,8 +100,12 @@ ul.right
     position: absolute
     right: 20px
     top: 360px
+#iconPaint
+    position: absolute
+    right: 20px
+    top: 60px
 
-#iconWelcome
+//#iconWelcome
     position: absolute
     right: 20px
     top: 60px
@@ -184,9 +188,10 @@ ul.right
 
         img
             position: absolute
-            top: 60%
-            transform: translate(0%, -60%)
-            height: 300px
+            top: 50%
+            transform: translate(15%, -50%)
+            width: 150px
+            border-radius: 50%
 
     .about
         text-align: left
@@ -284,59 +289,92 @@ ul.right
     border-radius: 5px
     z-index: 1
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+    span.about
+        margin: 2% 5%;
+        width: 90%;
+        font-family: monospace;
+        font-size: 16px;
 
 
 
 .windowSettings
-    display: none
-    left: 6%
-    top: 26%
-    position: absolute
-    height: 350px
-
-    width: 550px
-    background-color: rgba(245,245,245,1)
-    border-radius: 5px
-    z-index: 1
-    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
-
-
-    .setting
-        margin: 0
+  display: none
+  left: 6%
+  top: 16%
+  position: absolute
+  height: 350px
+  width: 550px
+  background-color: whitesmoke
+  border-radius: 5px
+  z-index: 1
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+  .setting
+    margin: 0
+    display: block
+    .left
+      display: inline-block
+      float: left
+      height: 100%
+      .settingsButton, .visibilityButton
         display: block
+        color: rgba(1, 1, 1, 0.6)
+        text-align: center
+        font-weight: 700
+        width: 100%
+        margin: 10px
+        padding: 20px
+        border: 0
+        border-radius: 0px
+        color: rgba(1, 1, 1, 0.7)
+        background: linear-gradient(180deg, #d8dde2, #b1b1b1)
+        cursor: pointer
 
-        .wallpaper
-            margin: 2%
-            width: 150px
+      .settingsButton:hover, .visibilityButton:hover
+        background: linear-gradient(180deg, #7db1e5, #97c1ea)
 
+      .settingsButton:active, .visibilityButton:active
+        background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1)
+        background: -o-linear-gradient(0deg, #cacaca, #b1b1b1)
+        background: linear-gradient(0deg, #cacaca, #b1b1b1)
 
-            h4
-                border-bottom: 1px solid $light-gray
-                color: $transp-text
-                text-align: center
-                font-weight: 700
-
-            button
-                width: 150px
-                margin: 5px 0
-                padding: 5px 10px
-                border: 0
-                border-radius: 0px
-                color: rgba(1,1,1,0.7)
-                background: linear-gradient(180deg, $grey-blue, $tab-gray)
-                cursor: pointer
-
-                &:hover
-                    background: linear-gradient(180deg, #7DB1E5, #97C1EA)
+      .settingsButton:focus, .visibilityButton:focus
+        outline: 0
 
 
-                &:active
-                    background: -webkit-linear-gradient(0deg, $light-gray, $tab-gray)
-                    background: -o-linear-gradient(0deg, $light-gray, $tab-gray)
-                    background: linear-gradient(0deg, $light-gray, $tab-gray)
+    .right
+      display: inline-block
+      margin: 1% 0 0 10%
+      .backgroundChange, .visibilityChange
+        display: none
+        margin: 0
 
-                &:focus
-                    outline: 0
+      .backgroundChange li, .visibilityChange li
+        width: 100%
+
+      .backgroundChange li button, .visibilityChange li button
+        width: 100%
+        margin: 5px 20%
+        padding: 10px 10px
+        border: 0
+        border-radius: 0px
+        color: rgba(1, 1, 1, 0.7)
+        background: linear-gradient(180deg, #d8dde2, #b1b1b1)
+        cursor: pointer
+
+      .backgroundChange li button:hover, .visibilityChange li button:hover
+        background: linear-gradient(180deg, #7db1e5, #97c1ea)
+
+      .backgroundChange li button:active, .visibilityChange li button:active
+        background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1)
+        background: -o-linear-gradient(0deg, #cacaca, #b1b1b1)
+        background: linear-gradient(0deg, #cacaca, #b1b1b1)
+
+      .backgroundChange li button:focus, .visibilityChange li button:focus
+        outline: 0
+
+
+
+
 .windowOverview
     display: none
     position: absolute
@@ -350,6 +388,21 @@ ul.right
     z-index: 1
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
 
+.windowPaint
+    position: absolute
+    left: 5%
+    top: 17%
+    height: 350px
+    width: 550px
+    background-color: rgba(245,245,245,1)
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+    overflow: hidden
+    #paintCanvas
+        #canvasDiv
+            min-height: 310px
+            min-width: 550px
 
 
 
@@ -365,8 +418,6 @@ ul.right
     border-radius: 5px
     z-index: 1
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
-
-
 
 
 
@@ -805,7 +856,7 @@ a.desktop_icon
 
         .about
             text-align: left
-            width: 90%
+            width: 66%
             float: right
 
 
@@ -950,7 +1001,7 @@ a.desktop_icon
 
         .about
             text-align: left
-            width: 90%
+            width: 66%
             float: right
 
 
@@ -1095,7 +1146,7 @@ a.desktop_icon
 
         .about
             text-align: left
-            width: 90%
+            width: 66%
             float: right
 
 
@@ -1287,9 +1338,12 @@ a.desktop_icon
         top: 20px
         left: 0
         right: 0
-
         border-radius: 0px
+        .windowIcon
+            img
+                display: none
         .windowBar
+
             border-top-left-radius: 0px
             border-top-right-radius: 0px
 

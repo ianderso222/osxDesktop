@@ -1,253 +1,298 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <link link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-    <script src="js/typed.js"></script>
-  </head>
-  <body>
-    <div class="loaderWrapper">
-      <div id="loading">
-        <p class="loadText"></p>
-        <p class="loadStatus"></p>
+<head>
+  <!-- Copyright Ian Anderson Web Development 3/25/2016-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <title>Frontend Developer Ian Anderson</title>
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+  <link link="" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="js/moment.js"></script>
+  <script src="js/typed.js"></script>
+</head>
+<div class="loaderWrapper">
+  <div id="loading">
+    <p class="loadText"></p>
+    <p class="loadStatus"></p>
+  </div>
+</div>
+<div class="wrapper"> 
+  <div id="topNav">
+    <ul class="left">
+      <li class="miniLogo">IA</li>
+      <li class="bold">ianOS</li>
+      <li>File</li>
+      <li>Edit</li>
+      <li>View</li>
+      <li class="help">Help</li>
+    </ul>
+    <ul class="right">
+      <li class="glyphicon glyphicon-signal"></li>
+      <li>100%</li>
+      <li id="time"></li>
+      <li>Ian Anderson</li>
+    </ul>
+  </div>
+  <div class="desktop_icon">
+    <div class="icon" id="iconOverview"><img src="images/folder.png">
+      <p>Overview</p>
+    </div>
+    <div class="icon" id="iconAbout"><img src="images/folder.png">
+      <p>About</p>
+    </div>
+    <div class="icon" id="iconPaint"><img src="images/folder.png">
+      <p>Paint</p>
+    </div>
+    <div class="icon" id="iconPortfolio"><img src="images/folderFill.png">
+      <p>Portfolio</p>
+    </div>
+    <!--#iconWelcome.icon-->
+    <!--img(src='images/folder.png')-->
+    <!--p Welcome-->
+  </div>
+  <div class="window windowPaint">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign" id="paintClose"></li>
+        <li class="glyphicon glyphicon-minus-sign" id="paintMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>PAINT    </li>
+      </ul>
+    </div>
+    <div id="paintCanvas">
+      <input id="hex" placeholder="#000000">
+      <button id="clear">Clear</button>
+      <canvas id="canvasDiv" width="550" height="310"></canvas>
+    </div>
+  </div>
+  <div class="window windowOverview">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign overviewClose"></li>
+        <li class="glyphicon glyphicon-minus-sign overviewMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>OVERVIEW    </li>
+      </ul>
+    </div>
+    <div class="windowIcon"><img src="images/headShot.jpg"></div><span class="about">
+      <h1>Ian Anderson</h1>
+      <h6>Version 4.0</h6>
+      <h4>Frontend Web Developer/Designer</h4>
+      <p>Degree <span> Business Management B.S.</span></p>
+      <p>Experience<span>4 Years</span></p>
+      <p>Languages<span>HTML/Pug, CSS/Sass, JavaScript/jQuery, React, Ruby</span></p>
+      <p>Tools<span>Git, Photoshop, Atom/Brackets, Emmet, WordPress</span></p>
+      <p>Environments<span>Windows, Mac, Linux</span></p></span>
+  </div>
+  <div class="window windowAbout">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign aboutClose"></li>
+        <li class="glyphicon glyphicon-minus-sign aboutMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>ABOUT</li>
+      </ul>
+    </div>
+    <div class="windowIcon"></div><span class="about">
+      <p><strong>I am a frontend web developer based in the Bowling Green, Kentucky area.</strong></p>
+      <p>Named after Jethro Tull&apos;s frontman. I spend a majority of my time glued to a screen designing and developing websites, learning new languages and skills, or planning my next big adventure.</p>
+      <p>My next meal likely consists of pasta or tacos. When I&apos;m not being a developer I hike, play tennis, or travel.</p></span>
+  </div>
+  <div class="window windowSettings">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign settingsClose"></li>
+        <li class="glyphicon glyphicon-minus-sign settingsMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>SETTINGS  </li>
+      </ul>
+    </div><span class="setting">
+      <div class="left">
+        <div class="settingsButton"> Set Wallpaper</div>
+        <div class="visibilityButton"> Visibility </div>
+      </div>
+      <div class="right">
+        <ul class="backgroundChange">
+          <!-- li: button.background1 Mountains-->
+          <li>
+            <button class="background2">Sherbet</button>
+          </li>
+          <li>
+            <button class="background3">Oceanic</button>
+          </li>
+          <li>
+            <button class="background4">Silver</button>
+          </li>
+          <li>
+            <button class="background5">Night Light</button>
+          </li>
+        </ul>
+        <ul class="visibilityChange">
+          <li>
+            <button class="transOn">Transparency On</button>
+          </li>
+          <li>
+            <button class="transOff">Transparency Off</button>
+          </li>
+        </ul>
+      </div></span>
+  </div>
+  <div class="window windowEmail">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign emailClose"></li>
+        <li class="glyphicon glyphicon-minus-sign emailMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>EMAIL to: ian@theiananderson.com</li>
+      </ul>
+    </div>
+    <form action="//formspree.io/ianderso222@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Name">
+      <input type="email" name="_replyto" placeholder="Email">
+      <input type="text" name="_gotcha" style="display:none">
+      <textarea type="text" name="message" placeholder="Let's work on something..."></textarea>
+      <input type="submit" value="SEND">
+      <input type="hidden" name="_next" value="//theiananderson.com/submit.html">
+    </form>
+  </div>
+  <!--.window.windowWelcome
+  .windowBar
+      ul.button
+          li.glyphicon.glyphicon-remove-sign.welcomeClose
+          li.glyphicon.glyphicon-minus-sign.welcomeMin
+      ul.tab
+          li WELCOME  
+  span.welcomeText
+      h4
+          | Hey there! My name is Ian Anderson. I am a Frontend Web Developer. Welcome to my site!
+  
+      h5 Odds are I would love to work with you, so go ahead, drop me a line.
+      h5
+          | - Click on the folders to the right to read some more about me or view some of my work.
+      h5
+          | - Click on the icons at the bottom to view some of my social pages, change the settings of this page, or send me an email.
+  -->
+  <div class="window windowPortfolio">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign portfolioClose"></li>
+        <li class="glyphicon glyphicon-minus-sign portfolioMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>PORTFOLIO    </li>
+      </ul>
+    </div>
+    <div class="portfolioGrid">
+      <div class="item" id="itemPersonal"><img src="images/personal.jpg">
+        <p>Personal Webpage  </p>
+      </div>
+      <div class="item" id="itemWeather"><img src="images/weather.jpg">
+        <p>Weather App </p>
+      </div>
+      <div class="item" id="itemCate"><img src="images/cate_case1.jpg">
+        <p>MaryCateBrown.com</p>
+      </div>
+      <div class="item" id="itemForest"><img src="images/forest_case.jpg">
+        <p>HTML Template</p>
+      </div>
+      <div class="item" id="itemTaco"><img src="images/taco_case1.jpg">
+        <p>Restaurant Mockup</p>
+      </div>
+      <div class="item" id="itemPrompt"><img src="images/case_prompt.jpg">
+        <p>Design Prompt Generator</p>
       </div>
     </div>
-    <div class="wrapper">
-      <div id="topNav">
-        <ul class="left">
-          <li class="miniLogo">IA</li>
-          <li class="bold">ianOS</li>
-          <li>File</li>
-          <li>Edit</li>
-          <li>View</li>
-          <li class="help">Help</li>
-        </ul>
-        <ul class="right">
-          <li class="glyphicon glyphicon-signal"></li>
-          <li>100%</li>
-          <li id="time"></li>
-          <li>Ian Anderson</li>
-        </ul>
-      </div>
-      <div class="desktop_icon">
-        <div id="iconOverview" class="icon"><img src="images/folder.png">
-          <p>Overview</p>
-        </div>
-        <div id="iconAbout" class="icon"><img src="images/folder.png">
-          <p>About</p>
-        </div>
-        <div id="iconPortfolio" class="icon"><img src="images/folderFill.png">
-          <p>Portfolio</p>
-        </div>
-        <div id="iconWelcome" class="icon"><img src="images/folder.png">
-          <p>Welcome</p>
+  </div>
+  <div class="window windowGallery">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign galleryClose"></li>
+        <li class="glyphicon glyphicon-minus-sign galleryMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>PORTFOLIO GALLERY </li>
+      </ul>
+    </div>
+    <div class="galleryWrapper">
+      <div class="galleryItem" id="personal">
+        <div class="galleryImage"><img src="images/personal.jpg"></div>
+        <div class="galleryText">
+          <p>I drew a lot of inspiration from various operating systems to complete my personal site. Designed to resemble and in some ways function like many modern computer desktop environments the goal is to stand out from the monotonous style of most developer&apos;s personal web pages.</p>
         </div>
       </div>
-      <div class="window windowOverview">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign overviewClose"></li>
-            <li class="glyphicon glyphicon-minus-sign overviewMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>OVERVIEW</li>
-          </ul>
-        </div>
-        <div class="windowIcon"></div><span class="about">
-          <h1>Ian Anderson</h1>
-          <h6>Version 4.0</h6>
-          <h3>Frontend Web Developer</h3>
-          <p>Degree <span> Business Management B.S.</span></p>
-          <p>Experience<span>~1.5 years</span></p>
-          <p>Languages<span>HTML/Jade, CSS/Sass, Javascript/jQuery </span></p>
-          <p>Tools<span>Git, Photoshop, Atom/Brackets, Emmet</span></p>
-          <p>Environments<span>Windows, Mac, Linux</span></p></span>
-      </div>
-      <div class="window windowAbout">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign aboutClose"></li>
-            <li class="glyphicon glyphicon-minus-sign aboutMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>ABOUT</li>
-          </ul>
-        </div>
-        <div class="windowIcon"></div><span class="about">
-          <h1>Ian Anderson</h1>
-          <p>Degree <span>Business Management</span></p></span>
-      </div>
-      <div class="window windowSettings">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign settingsClose"></li>
-            <li class="glyphicon glyphicon-minus-sign settingsMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>SETTINGS  </li>
-          </ul>
-        </div><span class="setting">
-          <div class="wallpaper">
-            <h4>Set Wallpaper</h4>
-            <ul class="backgroundChange">
-              <li>
-                <button class="background1">Mountains</button>
-              </li>
-              <li>
-                <button class="background2">Sherbet</button>
-              </li>
-              <li>
-                <button class="background3">Oceanic</button>
-              </li>
-              <li>
-                <button class="background4">Silver</button>
-              </li>
-              <li>
-                <button class="background5">Night Light</button>
-              </li>
-            </ul>
-          </div></span>
-      </div>
-      <div class="window windowEmail">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign emailClose"></li>
-            <li class="glyphicon glyphicon-minus-sign emailMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>EMAIL to: ian@theiananderson.com</li>
-          </ul>
-        </div>
-        <form action="//formspree.io/ianderso222@gmail.com" method="POST">
-          <input type="text" name="name" placeholder="Name">
-          <input type="email" name="_replyto" placeholder="Email">
-          <textarea type="text" name="message" placeholder="Let's work on something..."></textarea>
-          <input type="submit" value="SEND">
-        </form>
-      </div>
-      <div class="window windowWelcome">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign welcomeClose"></li>
-            <li class="glyphicon glyphicon-minus-sign welcomeMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>WELCOME  </li>
-          </ul>
-        </div><span class="welcomeText">
-          <h4>Hey there! My name is Ian Anderson. I am a Frontend Web Developer. Welcome to my site!</h4>
-          <h5>As of <strong><u>3/6/2016</u></strong> I am accepting clients and trying to join your team.</h5>
-          <h5>Odds are I would love to work with you, so go ahead, drop me a line.</h5>
-          <h5>- Click on the folders to the right to read some more about me or view some of my work.</h5>
-          <h5>- Click on the icons at the bottom to view some of my social pages, change the settings of this page, or send me an email.</h5></span>
-      </div>
-      <div class="window windowPortfolio">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign portfolioClose"></li>
-            <li class="glyphicon glyphicon-minus-sign portfolioMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>PORTFOLIO </li>
-          </ul>
-        </div>
-        <div class="portfolioGrid">
-          <div id="itemPersonal" class="item">   <img src="images/Personal.png">
-            <p>Personal Webpage   </p>
-          </div>
-          <div id="itemForest" class="item">   <img src="images/forest_case.png">
-            <p>HTML Template</p>
-          </div>
-          <div id="itemCate" class="item">   <img src="images/cate_case1.png">
-            <p>MaryCateBrown.com</p>
-          </div>
-          <div id="itemEWF" class="item">   <img src="images/ewf_case.png">
-            <p>EmbryWoodsFarms.com</p>
-          </div>
-          <div id="itemTaco" class="item">   <img src="images/taco_case1.png">
-            <p>Restuarant Mockup</p>
-          </div>
-          <div id="itemNews" class="item">  <img src="images/case_study_news.png">
-            <p>News Site Theme</p>
-          </div>
-          <div id="itemPrompt" class="item"><img src="images/case_prompt.png">
-            <p>Random Design Prompt Generator</p>
-          </div>
+      <div class="galleryItem" id="forest">
+        <div class="galleryImage"><img src="images/forest_case.jpg"></div>
+        <div class="galleryText">
+          <p>A simple template that could be used for a number of website styles, ranging from restaurants to a travel blog. I used a few scroll reveal elements to give the page some life and fixed backgrounds to add depth. Keep in mind this is still very much a work in progress but it&apos;s a good glimpse into my work flow.</p><a href="/forest/home.html" target="_blank">
+            <p>View Site</p></a>
         </div>
       </div>
-      <div class="window windowGallery">
-        <div class="windowBar">
-          <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign galleryClose"></li>
-            <li class="glyphicon glyphicon-minus-sign galleryMin"></li>
-          </ul>
-          <ul class="tab">
-            <li>PORTFOLIO GALLERY </li>
-          </ul>
-        </div>
-        <div class="galleryWrapper">
-          <div id="personal" class="galleryItem">  
-            <div class="galleryImage"><img src="images/Personal.png"></div>
-            <div class="galleryText">
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site</p></a>
-            </div>
-          </div>
-          <div id="forest" class="galleryItem">   
-            <div class="galleryImage"><img src="images/forest_case.png"></div>
-            <div class="galleryText">
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site</p></a>
-            </div>
-          </div>
-          <div id="cate" class="galleryItem">
-            <div class="galleryImage"><img src="images/cate_case1.png"></div>
-            <div class="galleryText">
-              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site</p></a>
-            </div>
-          </div>
-          <div id="ewf" class="galleryItem">
-            <div class="galleryImage"><img src="images/ewf_case.png"></div>
-            <div class="galleryText">
-              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site     </p></a>
-            </div>
-          </div>
-          <div id="taco" class="galleryItem">
-            <div class="galleryImage"><img src="images/taco_case1.png"></div>
-            <div class="galleryText">
-              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site </p></a>
-            </div>
-          </div>
-          <div id="news" class="galleryItem">
-            <div class="galleryImage"><img src="images/case_study_news.png"></div>
-            <div class="galleryText">
-              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site            </p></a>
-            </div>
-          </div>
-          <div id="prompts" class="galleryItem">
-            <div class="galleryImage"><img src="images/case_prompt.png"></div>
-            <div class="galleryText">
-              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
-                <p>View Site      </p></a>
-            </div>
-          </div>
+      <div class="galleryItem" id="cate">
+        <div class="galleryImage"><img src="images/cate_case2.jpg"></div>
+        <div class="galleryText">
+          <p>The goal of this website was simple: to act as a showcase for work in a graphic design portfolio. With this website the client has done freelance design work for individuals and businesses all over the world and has recently secured a position as a graphic designer for a professional sports team.</p><a href="http://www.marycatebrown.com" target="_blank">
+            <p> View Site </p></a>
         </div>
       </div>
-      <div id="dock">
-        <div id="sort"><a href="https://twitter.com/ian_a_anderson" target="_blank"><img src="images/twitter.png" id="dockTwitter"></a><a href="https://www.reddit.com/user/ianaanderson/" target="_blank"><img src="images/reddit.png" id="dockReddit"></a><a href="https://github.com/ianderso222" target="_blank"><img src="images/github.png" id="dockGithub"></a><a href="https://www.instagram.com/ianderso222/" target="_blank"><img src="images/insta.png" id="dockInsta"></a><img src="images/email.png" id="dockEmail"><img src="images/Settings.png" id="dockSettings"></div>
+      <div class="galleryItem" id="taco">
+        <div class="galleryImage"><img src="images/taco_case1.jpg"></div>
+        <div class="galleryText">
+          <p>I completed the &quot;Taco Lobo&quot; site in about a day. I designed it in the middle of redoing my personal webpage just as a quick refresher after staring and tweaking the same site multiple times over. I wanted this website to reflect everything I desired to see when visiting a restaurant&apos;s website. I want to see is a menu on the webpage, not a downloadable pdf that opens a new window taking me away from their website.</p><a href="/demo/home.html" target="_blank">
+            <p>View Site </p></a>
+        </div>
+      </div>
+      <div class="galleryItem" id="prompts">
+        <div class="galleryImage"><img src="images/case_prompt.jpg"></div>
+        <div class="galleryText">
+          <p>While it is not a live site yet, I use this site from time to time as a way to random generate design prompts for practice. I plan to develop this further adding multiple variables and custom settings.</p>
+          <!--a(href="")//p View Site
+          -->
+        </div>
+      </div>
+      <div class="galleryItem" id="weather">
+        <div class="galleryImage"><img src="images/weather.jpg"></div>
+        <div class="galleryText">
+          <p>Weather app website featuring flat material UI and animated weather effects.  </p><a href="/weather/home.html" target="_blank">
+            <p>View Site    </p></a>
+        </div>
       </div>
     </div>
-  </body>
-  <script src="js/javascript.js"></script>
-</html>
+  </div>
+  <div id="dock">
+    <div id="sort"><a href="https://twitter.com/ian_a_anderson" target="_blank"><img id="dockTwitter" src="images/twitter.png"></a><a href="https://www.reddit.com/user/ianaanderson/" target="_blank"><img id="dockReddit" src="images/reddit.png"></a><a href="https://github.com/ianderso222" target="_blank"><img id="dockGithub" src="images/github.png"></a><a href="https://www.instagram.com/ianandrewanderson/" target="_blank"><img id="dockInsta" src="images/insta.png"></a><img id="dockEmail" src="images/email.png"><img id="dockSettings" src="images/Settings.png"></div>
+  </div>
+</div>
+<script>
+  //moment.js
+  var datetime = null,
+  date = null;
+  var update = function () {
+  date = moment(new Date())
+  datetime.html(date.format('dddd h:mm A'));
+  };
+  $(document).ready(function(){
+  datetime = $('#time')
+  update();
+  setInterval(update, 1000);
+  });
+  
+</script>
+<script src="js/javascript.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-69781668-1', 'auto');
+  ga('send', 'pageview');
+</script>
