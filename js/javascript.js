@@ -204,38 +204,57 @@ $('.windowPaint').css({
 $('.minFolderPaint').css("display", "none")
 });
 // paint onClick function
-$("#canvasDiv").on("click", function(e){
-e.preventDefault();
-console.log("party")
+//$("#canvasDiv").mousedown(function(e){
+// set canvas id to variable
+  var canvas = document.getElementById('canvasDiv');
 
-var canvas = document.getElementById("canvasDiv");
-var ctx = canvas.getContext("2d");
+  // get canvas 2D context and set it to the correct size
+  var ctx = canvas.getContext('2d');
+  // add event listeners to specify when functions should be triggered
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mousedown', setPosition);
+  canvas.addEventListener('mouseenter', setPosition);
 
-document.addEventListener('mousemove', draw);
-document.addEventListener('mouseenter', getMousePos);
-document.addEventListener('mousedown', getMousePos);
+  // last known position
+  var pos = { x: 0, y: 0 };
 
-function draw(e) {
-		if (e.buttons !== 1) return;
-    var pos = getMousePos(canvas, e);
+  // new position from mouse events
+  function setPosition(e) {
+    pos.x = e.offsetX;
+    pos.y = e.offsetY;
+  }
+
+  function draw(e) {
+    if( $(".window").hasClass("ui-draggable-dragging")) {
+      console.log("off")
+      return;
+    }
+
+
+    if (e.buttons !== 1) return; // if mouse is pressed.....
+
     var color = document.getElementById('hex').value;
-    
-    posx = pos.x;
-    posy = pos.y;
-    ctx.fillStyle = color;
-    ctx.fillRect(posx-2, posy-2, 8, 8);
-}
+    var brush = document.getElementById('brushSlider').value;
 
-function getMousePos(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
-    return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top
-    };
-}
+    ctx.beginPath(); // begin the drawing path
+
+    ctx.lineWidth = brush; // width of line
+    ctx.lineCap = 'round'; // rounded end cap
+    ctx.strokeStyle = color; // hex color of line
+
+    ctx.moveTo(pos.x, pos.y); // from position
+    setPosition(e);
+    ctx.lineTo(pos.x, pos.y); // to position
+
+    ctx.stroke(); // draw it!
+    $('#clear').on('click', function(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
 
 
-});
+   }
+
+//});
 
 /////////////////////////////////////////////////////////////////////////////////
 //- Settings Window

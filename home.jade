@@ -57,11 +57,19 @@ head
             ul.tab
                 li PAINT    
         #paintCanvas
-            input(id="hex" placeholder="#000000")
-            button(id="clear") Clear
-            canvas(id="canvasDiv" width="550" height="310")
-            
-            
+            canvas(id="canvasDiv" width="550" height="300")
+    .window.windowPaintMenu
+        .windowBar
+            ul.button
+                li.glyphicon.glyphicon-remove-sign#paintClose
+                li.glyphicon.glyphicon-minus-sign#paintMin
+            ul.tab
+                li PAINT  
+        #paintMenu
+            input(id="hex" placeholder="#000000") 
+            input(id="brushSlider" type="range" min="1" max="100" value="50" class="slider")
+            button(id="clear") Clear Canvas    
+        
     .window.windowOverview
         .windowBar
             ul.button
