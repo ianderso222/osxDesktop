@@ -58,17 +58,30 @@ head
                 li PAINT    
         #paintCanvas
             canvas(id="canvasDiv" width="550" height="300")
-    .window.windowPaintMenu
+          
+    .window#windowPaintMenu
         .windowBar
             ul.button
                 li.glyphicon.glyphicon-remove-sign#paintClose
                 li.glyphicon.glyphicon-minus-sign#paintMin
             ul.tab
-                li PAINT  
+                li MENU
         #paintMenu
-            input(id="hex" placeholder="#000000") 
+            #space
+            .paintMenuTitle COLOR
+            input(id="hex" placeholder="#303030" value="#303030")
+            .paintBtn
+                button#blackBtn
+                button#whiteBtn 
+                button#redBtn
+                button#orangeBtn 
+                button#yellowBtn
+                button#blueBtn
+                button#greenBtn
+            .paintMenuTitle BRUSH SIZE
             input(id="brushSlider" type="range" min="1" max="100" value="50" class="slider")
-            button(id="clear") Clear Canvas    
+            button#clear CLEAR  
+            button#reset RESET
         
     .window.windowOverview
         .windowBar

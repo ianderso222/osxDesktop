@@ -403,11 +403,15 @@ ul.right
         #canvasDiv
             min-height: 310px
             min-width: 550px
-.windowPaintMenu
-    position: absolute
-    left: 50%
+            background: #FFFFFF
+
+#windowPaintMenu
+    //position: absolute
+    //float: right
+    left: 42%
     top: 17%
-    height: 150px
+    //top: 0%
+    //min-height: 100%
     width: 150px
     background-color: rgba(245,245,245,1)
     border-radius: 5px
@@ -415,9 +419,49 @@ ul.right
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
 
     #paintMenu
+        width: 100%
+        #space
+            padding: 3px 0
+        .paintMenuTitle
+            padding: 4px 12px
+            font-weight: 900
+            color: rgba(1, 1, 1, 0.6)
+            letter-spacing: 0px
+            text-align: center
+            min-width: 100%
+            font-size: 10px
 
         #hex
             width: 100%
+            border: 0
+            padding: 5px
+            margin: 5px 0
+        input#hex
+            padding: 0 0 0 5px
+            //&::-webkit-input-placeholder
+                padding: 0 0 0 5px
+
+        .paintBtn
+            text-align: center
+            button
+                height: 17px
+                width: 17px
+                border-radius: 50%
+                border: 0
+            #orangeBtn
+                background: #FFB473
+            #blackBtn
+                background: #303030
+            #whiteBtn
+                background: #FFFFFF
+            #redBtn
+                background: #FF7373
+            #yellowBtn
+                background: #FFEE73
+            #blueBtn
+                background: #63B8FF
+            #greenBtn
+                background: #A4FF73
         #brushSlider
             -webkit-appearance: none
             appearance: none
@@ -425,9 +469,12 @@ ul.right
             height: 25px
             background: #d3d3d3
             outline: none
-            opacity: 0.7
+            opacity: 0.8
             -webkit-transition: .2s
             transition: opacity .2s
+            border: 0
+            padding: 5px
+            margin: 5px 0
             &:hover
                 opacity: 1
             &::-webkit-slider-thumb
@@ -436,12 +483,35 @@ ul.right
                 width: 25px
                 height: 25px
                 border-radius: 50%
-                background: #4CAF50
+                background: $blue
                 cursor: pointer
         #clear
+            background: #ff6d6191
+            border: 0
+            color: rgba(245,245,245,1)
+            font-weight: 700
+            font-size: 12px
+            letter-spacing: 0px
+            border-radius: 0 0 3px 0
+            width: 50%
+            float: right
+            padding: 5px
+            &:hover
+                background: #ff6d61
 
-
-
+        #reset
+            background: #ffb47391
+            border: 0
+            color: rgba(245,245,245,1)
+            font-weight: 700
+            font-size: 12px
+            letter-spacing: 0px
+            border-radius: 0 0 0 3px
+            width: 50%
+            float: left
+            padding: 5px
+            &:hover
+                background: #ffb473
 .windowEmail
     display: none
     position: absolute

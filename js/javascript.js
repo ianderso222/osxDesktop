@@ -241,6 +241,7 @@ $('.minFolderPaint').css("display", "none")
     ctx.lineWidth = brush; // width of line
     ctx.lineCap = 'round'; // rounded end cap
     ctx.strokeStyle = color; // hex color of line
+    ctx.lineJoin="round";
 
     ctx.moveTo(pos.x, pos.y); // from position
     setPosition(e);
@@ -250,10 +251,40 @@ $('.minFolderPaint').css("display", "none")
     $('#clear').on('click', function(){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
-
-
    }
 
+    document.getElementById("reset").onclick = function() {
+    document.getElementById("brushSlider").value = 50;
+    document.getElementById("hex").value = ('#303030');
+    }; // reset slider, color values
+
+    document.getElementById("blackBtn").onclick = function() {
+    document.getElementById("hex").value = ('#303030');
+    }; // set color to black
+
+    document.getElementById("whiteBtn").onclick = function() {
+    document.getElementById("hex").value = ('#FFFFFF');
+}; // set color to white
+
+    document.getElementById("redBtn").onclick = function() {
+    document.getElementById("hex").value = ('#FF7373');
+}; // set color to red
+
+    document.getElementById("orangeBtn").onclick = function() {
+    document.getElementById("hex").value = ('#FFB473');
+}; // set color to orange
+
+    document.getElementById("yellowBtn").onclick = function() {
+    document.getElementById("hex").value = ('#FFEE73');
+}; // set color to yellow
+
+    document.getElementById("blueBtn").onclick = function() {
+    document.getElementById("hex").value = ('#63B8FF');
+}; // set color to blue
+
+    document.getElementById("greenBtn").onclick = function() {
+    document.getElementById("hex").value = ('#A4FF73');
+}; // set color to green
 //});
 
 /////////////////////////////////////////////////////////////////////////////////
