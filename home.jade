@@ -3,24 +3,30 @@ head
     // Copyright Ian Anderson Web Development 3/25/2016
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(href='styles.css' rel='stylesheet')
-    link(href='set2.css' rel='stylesheet')
+    
     title Frontend Developer Ian Anderson
-    link(rel='icon' type='image/png' href='images/favicon-16x16.png' sizes='16x16')
-    link(rel='icon' type='image/png' href='images/favicon-32x32.png' sizes='32x32')
+    
+    link(href='styles.css' rel='stylesheet')
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     link(link='' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet')
     link(rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css')
+    
+    
+    link(rel='icon' type='image/png' href='images/favicon-16x16.png' sizes='16x16')
+    link(rel='icon' type='image/png' href='images/favicon-32x32.png' sizes='32x32')
+    
+    
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')
     script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js')
     script(src='js/moment.js')
-    script(src='js/typed.js')
+    //script(src='js/typed.js')
     script(src='js/classie.js')
 
-.loaderWrapper
-    #loading
-        p.loadText
-        p.loadStatus
+//.loaderWrapper
+    //#loading
+        //p.loadText
+        //p.loadStatus
 .wrapper 
     #topNav
         ul.left
@@ -58,37 +64,44 @@ head
                     li.glyphicon.glyphicon-remove-sign#paintClose
                     li.glyphicon.glyphicon-minus-sign#paintMin
                 ul.tab
-                    li PAINT    
-            .window#windowPaintMenu
+                    li PAINT
+                
+                ul#dropdownArea
+                    #dropdown
+                        #windowPaintMenu.showMenu
+                            #paintMenu
+                                .paintMenuTitle BRUSH COLOR
+                                input(id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030" )
+                                
+                                #space
+                                .paintBtn
+                                    button#blackBtn
+                                    button#whiteBtn 
+                                    button#redBtn
+                                    button#orangeBtn 
+                                    button#yellowBtn
+                                    button#blueBtn
+                                    button#greenBtn
+                                    button#purpBtn
+                                .paintMenuTitle BRUSH SIZE
+                                
+                                input(id="brushSlider" type="range" min="5" max="100" value="50" class="slider")
+                                    
+                                button#clear CLEAR  
+                                button#reset RESET
+            #paintCanvas
+                canvas(id="canvasDiv" width="550" height="300")        
+        //
+            .window
                 .windowBar
                     ul.button
                         li.glyphicon.glyphicon-remove-sign#paintMenuClose
                         li.glyphicon.glyphicon-minus-sign#paintMenuMin
                     ul.tab
                         li MENU
-                #paintMenu
-                    .paintMenuTitle BRUSH COLOR
-                    input(id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030" )
-                    span.underline
-                    #space
-                    .paintBtn
-                        button#blackBtn
-                        button#whiteBtn 
-                        button#redBtn
-                        button#orangeBtn 
-                        button#yellowBtn
-                        button#blueBtn
-                        button#greenBtn
-                        button#purpBtn
-                    .paintMenuTitle BRUSH SIZE
-                    
-                    input(id="brushSlider" type="range" min="5" max="100" value="50" class="slider")
-                        
-                    button#clear CLEAR  
-                    button#reset RESET
+                
     
-            #paintCanvas
-                canvas(id="canvasDiv" width="550" height="300")
+            
         
 
     

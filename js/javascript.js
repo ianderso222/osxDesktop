@@ -340,6 +340,7 @@ $('.transOff').click(function(){
 
 
 
+
 //background select script
 $('.background1').click(function() {
 $('.wrapper').css('background-image', 'url(images/wallpaper.jpg)');
@@ -360,9 +361,9 @@ $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
 //loader fade in/out
 setTimeout(function(){
  $('.loaderWrapper').remove();
-     }, 000);
+    }, 2000);
 
-$(".wrapper").hide(0).delay(000).fadeIn(1000)
+//$(".wrapper").hide(0).delay(000).fadeIn(5000)
 
 //typed.js
 $(function(){

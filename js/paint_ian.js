@@ -107,3 +107,10 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
     document.getElementById("hex").value = ('#d284ff');
     document.getElementById('space').style.backgroundColor = '#d284ff';
 }; // set color to purple
+
+$( "#dropdownArea" ).click(function() {
+    $('#windowPaintMenu').toggleClass("hideMenu showMenu");
+    $("#windowPaintMenu > *").click(function(e) {
+            e.stopPropagation();
+       });
+   });
