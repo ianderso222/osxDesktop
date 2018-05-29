@@ -51,44 +51,46 @@ head
         //#iconWelcome.icon
         //img(src='images/folder.png')
         //p Welcome
-    .window.windowPaint
-        .windowBar
-            ul.button
-                li.glyphicon.glyphicon-remove-sign#paintClose
-                li.glyphicon.glyphicon-minus-sign#paintMin
-            ul.tab
-                li PAINT    
-                
-        .window#windowPaintMenu
-            .windowBar-nonDrag
+    
+        .window.windowPaint
+            .windowBar
                 ul.button
-                    li.glyphicon.glyphicon-remove-sign#paintMenuClose
-                    li.glyphicon.glyphicon-minus-sign#paintMenuMin
+                    li.glyphicon.glyphicon-remove-sign#paintClose
+                    li.glyphicon.glyphicon-minus-sign#paintMin
                 ul.tab
-                    li MENU
-            #paintMenu
-                .paintMenuTitle BRUSH COLOR
-                input(id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030" )
-                span.underline
-                #space
-                .paintBtn
-                    button#blackBtn
-                    button#whiteBtn 
-                    button#redBtn
-                    button#orangeBtn 
-                    button#yellowBtn
-                    button#blueBtn
-                    button#greenBtn
-                    button#purpBtn
-                .paintMenuTitle BRUSH SIZE
-                
-                input(id="brushSlider" type="range" min="5" max="100" value="50" class="slider")
+                    li PAINT    
+            .window#windowPaintMenu
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign#paintMenuClose
+                        li.glyphicon.glyphicon-minus-sign#paintMenuMin
+                    ul.tab
+                        li MENU
+                #paintMenu
+                    .paintMenuTitle BRUSH COLOR
+                    input(id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030" )
+                    span.underline
+                    #space
+                    .paintBtn
+                        button#blackBtn
+                        button#whiteBtn 
+                        button#redBtn
+                        button#orangeBtn 
+                        button#yellowBtn
+                        button#blueBtn
+                        button#greenBtn
+                        button#purpBtn
+                    .paintMenuTitle BRUSH SIZE
                     
-                button#clear CLEAR  
-                button#reset RESET
-        #paintCanvas
-            canvas(id="canvasDiv" width="550" height="300")
-          
+                    input(id="brushSlider" type="range" min="5" max="100" value="50" class="slider")
+                        
+                    button#clear CLEAR  
+                    button#reset RESET
+    
+            #paintCanvas
+                canvas(id="canvasDiv" width="550" height="300")
+        
+
     
         
     .window.windowOverview

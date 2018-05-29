@@ -9,6 +9,7 @@ $( ".window" ).draggable({
     distance: 0
 })
 });
+
 }
 
 

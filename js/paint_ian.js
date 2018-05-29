@@ -1,7 +1,6 @@
 document.getElementById('space').style.backgroundColor = '#303030';
 $("#hex").on("change keyup paste click", function(colorSwatch) {
     var updateColor = document.getElementById('hex').value;
-    console.log('color changed');
     document.getElementById('space').style.backgroundColor = updateColor;
 });
 

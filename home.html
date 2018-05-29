@@ -56,49 +56,49 @@
     <!--#iconWelcome.icon-->
     <!--img(src='images/folder.png')-->
     <!--p Welcome-->
-  </div>
-  <div class="window windowPaint">
-    <div class="windowBar">
-      <ul class="button">
-        <li class="glyphicon glyphicon-remove-sign" id="paintClose"></li>
-        <li class="glyphicon glyphicon-minus-sign" id="paintMin"></li>
-      </ul>
-      <ul class="tab">
-        <li>PAINT    </li>
-      </ul>
-    </div>
-    <div class="window" id="windowPaintMenu">
-      <div class="windowBar-nonDrag">
+    <div class="window windowPaint">
+      <div class="windowBar">
         <ul class="button">
-          <li class="glyphicon glyphicon-remove-sign" id="paintMenuClose"></li>
-          <li class="glyphicon glyphicon-minus-sign" id="paintMenuMin"></li>
+          <li class="glyphicon glyphicon-remove-sign" id="paintClose"></li>
+          <li class="glyphicon glyphicon-minus-sign" id="paintMin"></li>
         </ul>
         <ul class="tab">
-          <li>MENU</li>
+          <li>PAINT    </li>
         </ul>
       </div>
-      <div id="paintMenu">
-        <div class="paintMenuTitle">BRUSH COLOR</div>
-        <input id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030"><span class="underline"></span>
-        <div id="space"></div>
-        <div class="paintBtn">
-          <button id="blackBtn"></button>
-          <button id="whiteBtn"> </button>
-          <button id="redBtn"></button>
-          <button id="orangeBtn"> </button>
-          <button id="yellowBtn"></button>
-          <button id="blueBtn"></button>
-          <button id="greenBtn"></button>
-          <button id="purpBtn"></button>
+      <div class="window" id="windowPaintMenu">
+        <div class="windowBar">
+          <ul class="button">
+            <li class="glyphicon glyphicon-remove-sign" id="paintMenuClose"></li>
+            <li class="glyphicon glyphicon-minus-sign" id="paintMenuMin"></li>
+          </ul>
+          <ul class="tab">
+            <li>MENU</li>
+          </ul>
         </div>
-        <div class="paintMenuTitle">BRUSH SIZE</div>
-        <input class="slider" id="brushSlider" type="range" min="5" max="100" value="50">
-        <button id="clear">CLEAR  </button>
-        <button id="reset">RESET</button>
+        <div id="paintMenu">
+          <div class="paintMenuTitle">BRUSH COLOR</div>
+          <input id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030"><span class="underline"></span>
+          <div id="space"></div>
+          <div class="paintBtn">
+            <button id="blackBtn"></button>
+            <button id="whiteBtn"> </button>
+            <button id="redBtn"></button>
+            <button id="orangeBtn"> </button>
+            <button id="yellowBtn"></button>
+            <button id="blueBtn"></button>
+            <button id="greenBtn"></button>
+            <button id="purpBtn"></button>
+          </div>
+          <div class="paintMenuTitle">BRUSH SIZE</div>
+          <input class="slider" id="brushSlider" type="range" min="5" max="100" value="50">
+          <button id="clear">CLEAR  </button>
+          <button id="reset">RESET</button>
+        </div>
       </div>
-    </div>
-    <div id="paintCanvas">
-      <canvas id="canvasDiv" width="550" height="300"></canvas>
+      <div id="paintCanvas">
+        <canvas id="canvasDiv" width="550" height="300"></canvas>
+      </div>
     </div>
   </div>
   <div class="window windowOverview">
