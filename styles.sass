@@ -1,33 +1,32 @@
 $bar: rgb(245,245,245)
 $transp-bar: rgba(245,245,245,0.8)
-$green: #66ff66
+$background: rgba(245,245,245,1)
+$green: #A4FF73
 $dark-gray: #858585
 $light-gray: #CACACA
 $tab-gray: #B1B1B1
-$white: #eeeeee
-$blue: #0088cc
-$blueButton: linear-gradient(180deg, #BDE0F1, #33A0D6)
+$white: #ffffff
+$blue: #63B8FF
+$blueButton: rgba(99, 184, 255, 0.58)
 $grey-blue: #D8DDE2
-$red: #FF6D61
-$yellow: #FFC661
+$red: #FF7373
+$yellow: #FFEE73
 $transp-text: rgba(1,1,1,0.6)
 $windowBar: linear-gradient(180deg, #cbcbcb, #d7d7d7)
 $emailButton: linear-gradient(0deg, #39B54A, #B1E5CA)
-
 
 body
     margin: 0
     overflow: hidden
 
-
 .wrapper
     max-width: 100%
     height: 100vh
-    background-image: url(images/wallpaper5.jpg)
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2)
+    background: linear-gradient(to right, #2F80ED, #56CCF2)
+    //background-image: url(images/wallpaper2.jpg)
     background-size: cover
-
-
-
 
     #topNav
         width: 100%
@@ -38,11 +37,8 @@ body
         box-shadow: 0px 0px 22px 0px #888888
         z-index: 999
 
-
-
         ul.left li
             position: relative
-
 
 ul
     list-style-type: none
@@ -145,9 +141,6 @@ ul.right
         background: $grey-blue
         border-top-left-radius: 5px
         border-top-right-radius: 5px
-
-
-
 
         ul.button
             display: inline-block
@@ -402,52 +395,80 @@ ul.right
         overflow: hidden
         #canvasDiv
             min-height: 310px
-            min-width: 550px
+            width: 100%
             background: #FFFFFF
+            border-radius: 0 0 5px 5px
 
 #windowPaintMenu
-    //position: absolute
-    //float: right
-    left: 42%
-    top: 17%
-    //top: 0%
-    //min-height: 100%
+    position: absolute
+    float: right
+    top: 0%
+    left: 101%
     width: 150px
     background-color: rgba(245,245,245,1)
     border-radius: 5px
     z-index: 1
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+    .windowBar-nonDrag
+        height: 40px
+        background: $grey-blue
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        ul.button
+            display: inline-block
+
+        ul.tab
+            display: inline-block
+            cursor: default
+            li
+                //background-color: $tab-gray
+                padding: 3px 12px
+                font-weight: 900
+                //border-radius: 5px
+                color: rgba(1,1,1,0.6)
+                letter-spacing: 0px
 
     #paintMenu
         width: 100%
         #space
-            padding: 3px 0
+            padding: 10px 0
+            background-color: inherit
+            transition: all 0.4s ease
+            &:hover
+                padding: 15px 0
+
         .paintMenuTitle
-            padding: 4px 12px
+            padding: 6px 0
             font-weight: 900
             color: rgba(1, 1, 1, 0.6)
             letter-spacing: 0px
             text-align: center
             min-width: 100%
             font-size: 10px
-
         #hex
             width: 100%
-            border: 0
-            padding: 5px
-            margin: 5px 0
-        input#hex
-            padding: 0 0 0 5px
-            //&::-webkit-input-placeholder
-                padding: 0 0 0 5px
+            text-align: center
+            width: 100%
+            background: $background
+            border: 0px
+            input#hex
+
+
 
         .paintBtn
             text-align: center
+            padding: 5px 0
+            width: 100%
             button
-                height: 17px
-                width: 17px
+                height: 30px
+                width: 30px
                 border-radius: 50%
                 border: 0
+                opacity: .8
+
+                &:hover
+                    opacity: 1
+
             #orangeBtn
                 background: #FFB473
             #blackBtn
@@ -462,12 +483,14 @@ ul.right
                 background: #63B8FF
             #greenBtn
                 background: #A4FF73
+            #purpBtn
+                background: #d284ff
         #brushSlider
             -webkit-appearance: none
             appearance: none
             width: 100%
-            height: 25px
-            background: #d3d3d3
+            height: 20px
+            background: #d2d2d2
             outline: none
             opacity: 0.8
             -webkit-transition: .2s
@@ -480,13 +503,14 @@ ul.right
             &::-webkit-slider-thumb
                 -webkit-appearance: none
                 appearance: none
-                width: 25px
-                height: 25px
+                width: 20px
+                height: 20px
                 border-radius: 50%
-                background: $blue
+                background: rgba(61, 117, 255, 1)
                 cursor: pointer
+
         #clear
-            background: #ff6d6191
+            background: #FF7373
             border: 0
             color: rgba(245,245,245,1)
             font-weight: 700
@@ -496,11 +520,12 @@ ul.right
             width: 50%
             float: right
             padding: 5px
+            transition: all 0.4s ease
+            opacity: .8
             &:hover
-                background: #ff6d61
-
+                opacity: 1
         #reset
-            background: #ffb47391
+            background: #FFB473
             border: 0
             color: rgba(245,245,245,1)
             font-weight: 700
@@ -510,8 +535,10 @@ ul.right
             width: 50%
             float: left
             padding: 5px
+            transition: all 0.4s ease
+            opacity: .8
             &:hover
-                background: #ffb473
+                opacity: 1
 .windowEmail
     display: none
     position: absolute

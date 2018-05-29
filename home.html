@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles.css" rel="stylesheet">
+  <link href="set2.css" rel="stylesheet">
   <title>Frontend Developer Ian Anderson</title>
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
@@ -14,6 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="js/moment.js"></script>
   <script src="js/typed.js"></script>
+  <script src="js/classie.js"></script>
 </head>
 <div class="loaderWrapper">
   <div id="loading">
@@ -65,37 +67,38 @@
         <li>PAINT    </li>
       </ul>
     </div>
+    <div class="window" id="windowPaintMenu">
+      <div class="windowBar-nonDrag">
+        <ul class="button">
+          <li class="glyphicon glyphicon-remove-sign" id="paintMenuClose"></li>
+          <li class="glyphicon glyphicon-minus-sign" id="paintMenuMin"></li>
+        </ul>
+        <ul class="tab">
+          <li>MENU</li>
+        </ul>
+      </div>
+      <div id="paintMenu">
+        <div class="paintMenuTitle">BRUSH COLOR</div>
+        <input id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030"><span class="underline"></span>
+        <div id="space"></div>
+        <div class="paintBtn">
+          <button id="blackBtn"></button>
+          <button id="whiteBtn"> </button>
+          <button id="redBtn"></button>
+          <button id="orangeBtn"> </button>
+          <button id="yellowBtn"></button>
+          <button id="blueBtn"></button>
+          <button id="greenBtn"></button>
+          <button id="purpBtn"></button>
+        </div>
+        <div class="paintMenuTitle">BRUSH SIZE</div>
+        <input class="slider" id="brushSlider" type="range" min="5" max="100" value="50">
+        <button id="clear">CLEAR  </button>
+        <button id="reset">RESET</button>
+      </div>
+    </div>
     <div id="paintCanvas">
       <canvas id="canvasDiv" width="550" height="300"></canvas>
-    </div>
-  </div>
-  <div class="window" id="windowPaintMenu">
-    <div class="windowBar">
-      <ul class="button">
-        <li class="glyphicon glyphicon-remove-sign" id="paintClose"></li>
-        <li class="glyphicon glyphicon-minus-sign" id="paintMin"></li>
-      </ul>
-      <ul class="tab">
-        <li>MENU</li>
-      </ul>
-    </div>
-    <div id="paintMenu">
-      <div id="space"></div>
-      <div class="paintMenuTitle">COLOR</div>
-      <input id="hex" placeholder="#303030" value="#303030">
-      <div class="paintBtn">
-        <button id="blackBtn"></button>
-        <button id="whiteBtn"> </button>
-        <button id="redBtn"></button>
-        <button id="orangeBtn"> </button>
-        <button id="yellowBtn"></button>
-        <button id="blueBtn"></button>
-        <button id="greenBtn"></button>
-      </div>
-      <div class="paintMenuTitle">BRUSH SIZE</div>
-      <input class="slider" id="brushSlider" type="range" min="1" max="100" value="50">
-      <button id="clear">CLEAR  </button>
-      <button id="reset">RESET</button>
     </div>
   </div>
   <div class="window windowOverview">
@@ -315,6 +318,7 @@
   
 </script>
 <script src="js/javascript.js"></script>
+<script src="js/paint_ian.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

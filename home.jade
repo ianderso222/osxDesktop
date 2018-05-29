@@ -4,6 +4,7 @@ head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(href='styles.css' rel='stylesheet')
+    link(href='set2.css' rel='stylesheet')
     title Frontend Developer Ian Anderson
     link(rel='icon' type='image/png' href='images/favicon-16x16.png' sizes='16x16')
     link(rel='icon' type='image/png' href='images/favicon-32x32.png' sizes='32x32')
@@ -14,6 +15,7 @@ head
     script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js')
     script(src='js/moment.js')
     script(src='js/typed.js')
+    script(src='js/classie.js')
 
 .loaderWrapper
     #loading
@@ -56,32 +58,38 @@ head
                 li.glyphicon.glyphicon-minus-sign#paintMin
             ul.tab
                 li PAINT    
+                
+        .window#windowPaintMenu
+            .windowBar-nonDrag
+                ul.button
+                    li.glyphicon.glyphicon-remove-sign#paintMenuClose
+                    li.glyphicon.glyphicon-minus-sign#paintMenuMin
+                ul.tab
+                    li MENU
+            #paintMenu
+                .paintMenuTitle BRUSH COLOR
+                input(id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030" )
+                span.underline
+                #space
+                .paintBtn
+                    button#blackBtn
+                    button#whiteBtn 
+                    button#redBtn
+                    button#orangeBtn 
+                    button#yellowBtn
+                    button#blueBtn
+                    button#greenBtn
+                    button#purpBtn
+                .paintMenuTitle BRUSH SIZE
+                
+                input(id="brushSlider" type="range" min="5" max="100" value="50" class="slider")
+                    
+                button#clear CLEAR  
+                button#reset RESET
         #paintCanvas
             canvas(id="canvasDiv" width="550" height="300")
           
-    .window#windowPaintMenu
-        .windowBar
-            ul.button
-                li.glyphicon.glyphicon-remove-sign#paintClose
-                li.glyphicon.glyphicon-minus-sign#paintMin
-            ul.tab
-                li MENU
-        #paintMenu
-            #space
-            .paintMenuTitle COLOR
-            input(id="hex" placeholder="#303030" value="#303030")
-            .paintBtn
-                button#blackBtn
-                button#whiteBtn 
-                button#redBtn
-                button#orangeBtn 
-                button#yellowBtn
-                button#blueBtn
-                button#greenBtn
-            .paintMenuTitle BRUSH SIZE
-            input(id="brushSlider" type="range" min="1" max="100" value="50" class="slider")
-            button#clear CLEAR  
-            button#reset RESET
+    
         
     .window.windowOverview
         .windowBar
@@ -289,6 +297,7 @@ script.
     });
 
 script(src='js/javascript.js')
+script(src='js/paint_ian.js')
 script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
