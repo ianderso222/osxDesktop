@@ -364,31 +364,22 @@ ul#dropdownArea {
   margin-bottom: 0px; }
   ul#dropdownArea:hover #dropdown {
     width: 20px;
-    top: 15px;
     background-color: #63B8FF;
-    -webkit-transition: all 0.3s ease-in-out .05s;
-    -o-transition: all 0.3s ease-in-out .05s;
-    transition: all 0.3s ease-in-out .05s; }
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
     ul#dropdownArea:hover #dropdown::before {
       width: 20px;
-      top: 0;
       background-color: #FFEE73;
-      -webkit-transition: all 0.4s ease-in-out .075s;
-      -o-transition: all 0.4s ease-in-out .075s;
-      transition: all 0.4s ease-in-out .075s;
-      -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      transform: rotate(180deg); }
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
     ul#dropdownArea:hover #dropdown::after {
       width: 20px;
-      top: 0;
       background-color: #FF7373;
-      -webkit-transition: all 0.5s ease-in-out .2s;
-      -o-transition: all 0.5s ease-in-out .2s;
-      transition: all 0.5s ease-in-out .2s;
-      -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      transform: rotate(180deg); }
+      -webkit-transition: all 0.75s ease-in-out;
+      -o-transition: all 0.75s ease-in-out;
+      transition: all 0.75s ease-in-out; }
   ul#dropdownArea #dropdown {
     position: absolute;
     width: 20px;
@@ -396,9 +387,9 @@ ul#dropdownArea {
     background-color: #8a8a8a;
     right: 20px;
     top: 12px;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
     ul#dropdownArea #dropdown:before, ul#dropdownArea #dropdown:after {
       content: "";
       position: absolute;
@@ -411,16 +402,16 @@ ul#dropdownArea {
       top: 7px;
       width: 20px;
       background-color: #8a8a8a;
-      -webkit-transition: all 0.4s ease-in-out;
-      -o-transition: all 0.4s ease-in-out;
-      transition: all 0.4s ease-in-out; }
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
     ul#dropdownArea #dropdown:after {
       top: 14px;
       width: 20px;
       background-color: #8a8a8a;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
+      -webkit-transition: all 0.75s ease-in-out;
+      -o-transition: all 0.75s ease-in-out;
+      transition: all 0.75s ease-in-out; }
     ul#dropdownArea #dropdown #windowPaintMenu {
       position: absolute;
       top: 23px;
