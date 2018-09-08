@@ -6,7 +6,7 @@
   <title>Frontend Developer Ian Anderson</title>
   <link href="styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link link="" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
+  <link link="" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" type="text/css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
@@ -14,15 +14,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="js/moment.js"></script>
-  <!--script(src='js/typed.js')-->
-  <script src="js/classie.js"></script>
+  <script src="js/typed.js"></script>
 </head>
-<!--.loaderWrapper
-//#loading
-    //p.loadText
-    //p.loadStatus
--->
-<div class="wrapper"> 
+<div class="loaderWrapper">
+  <div id="loading">
+    <p class="loadText"></p>
+    <p class="loadStatus"></p>
+  </div>
+</div>
+<div class="wrapper">
   <div id="topNav">
     <ul class="left">
       <li class="miniLogo">IA</li>
@@ -36,20 +36,20 @@
       <li class="glyphicon glyphicon-signal"></li>
       <li>100%</li>
       <li id="time"></li>
-      <li>Ian Anderson</li>
+      <li>Guest Client</li>
     </ul>
   </div>
   <div class="desktop_icon">
-    <div class="icon" id="iconOverview"><img src="images/folder.png">
+    <div id="iconOverview" class="icon"><img src="images/folder.png">
       <p>Overview</p>
     </div>
-    <div class="icon" id="iconAbout"><img src="images/folder.png">
+    <div id="iconAbout" class="icon"><img src="images/folder.png">
       <p>About</p>
     </div>
-    <div class="icon" id="iconPaint"><img src="images/folder.png">
+    <div id="iconPaint" class="icon"><img src="images/folder.png">
       <p>Paint</p>
     </div>
-    <div class="icon" id="iconPortfolio"><img src="images/folderFill.png">
+    <div id="iconPortfolio" class="icon"><img src="images/folderFill.png">
       <p>Portfolio</p>
     </div>
     <!--#iconWelcome.icon-->
@@ -58,31 +58,31 @@
     <div class="window windowPaint">
       <div class="windowBar">
         <ul class="button">
-          <li class="glyphicon glyphicon-remove-sign" id="paintClose"></li>
-          <li class="glyphicon glyphicon-minus-sign" id="paintMin"></li>
+          <li id="paintClose" class="glyphicon glyphicon-remove-sign"></li>
+          <li id="paintMin" class="glyphicon glyphicon-minus-sign"></li>
         </ul>
         <ul class="tab">
           <li>PAINT</li>
         </ul>
         <ul id="dropdownArea">
           <div id="dropdown">
-            <div class="showMenu" id="windowPaintMenu">
+            <div id="windowPaintMenu" class="showMenu">
               <div id="paintMenu">
                 <div class="paintMenuTitle">BRUSH COLOR</div>
                 <input id="hex" placeholder="#hex or rgba(0,0,0,0)" value="#303030">
                 <div id="space"></div>
                 <div class="paintBtn">
                   <button id="blackBtn"></button>
-                  <button id="whiteBtn"> </button>
+                  <button id="whiteBtn"></button>
                   <button id="redBtn"></button>
-                  <button id="orangeBtn"> </button>
+                  <button id="orangeBtn"></button>
                   <button id="yellowBtn"></button>
                   <button id="blueBtn"></button>
                   <button id="greenBtn"></button>
                   <button id="purpBtn"></button>
                 </div>
                 <div class="paintMenuTitle">BRUSH SIZE</div>
-                <input class="slider" id="brushSlider" type="range" min="5" max="100" value="50">
+                <input id="brushSlider" type="range" min="5" max="100" value="50" class="slider">
                 <button id="clear">CLEAR  </button>
                 <button id="reset">RESET</button>
               </div>
@@ -102,13 +102,13 @@
                 li.glyphicon.glyphicon-minus-sign#paintMenuMin
             ul.tab
                 li MENU
-        
-    
-    
-    
-    
-    
-    
+                
+                
+                
+                
+                
+                
+                
     -->
   </div>
   <div class="window windowOverview">
@@ -143,8 +143,7 @@
     </div>
     <div class="windowIcon"></div><span class="about">
       <p><strong>I am a frontend web developer based in the Bowling Green, Kentucky area.</strong></p>
-      <p>Named after Jethro Tull&apos;s frontman. I spend a majority of my time glued to a screen designing and developing websites, learning new languages and skills, or planning my next big adventure.</p>
-      <p>My next meal likely consists of pasta or tacos. When I&apos;m not being a developer I hike, play tennis, or travel.</p></span>
+      <p>Named after Jethro Tull&apos;s frontman. I spend a majority of my time glued to a screen designing and developing websites, learning new languages and skills, or planning my next big adventure.</p></span>
   </div>
   <div class="window windowSettings">
     <div class="windowBar">
@@ -155,36 +154,33 @@
       <ul class="tab">
         <li>SETTINGS  </li>
       </ul>
-    </div><span class="setting">
-      <div class="left">
-        <div class="settingsButton"> Set Wallpaper</div>
-        <div class="visibilityButton"> Visibility </div>
-      </div>
-      <div class="right">
-        <ul class="backgroundChange">
-          <!-- li: button.background1 Mountains-->
-          <li>
-            <button class="background2">Sherbet</button>
-          </li>
-          <li>
-            <button class="background3">Oceanic</button>
-          </li>
-          <li>
-            <button class="background4">Silver</button>
-          </li>
-          <li>
-            <button class="background5">Night Light</button>
-          </li>
-        </ul>
-        <ul class="visibilityChange">
-          <li>
-            <button class="transOn">Transparency On</button>
-          </li>
-          <li>
-            <button class="transOff">Transparency Off</button>
-          </li>
-        </ul>
-      </div></span>
+    </div>
+    <div class="setting">
+      <div class="settingsButton"> Set Background</div>
+      <ul class="backgroundChange">
+        <li>
+          <button class="background2">Sherbet</button>
+        </li>
+        <li>
+          <button class="background3">Oceanic</button>
+        </li>
+        <li>
+          <button class="background4">Silver</button>
+        </li>
+        <li>
+          <button class="background5">Night Light</button>
+        </li>
+      </ul>
+      <div class="visibilityButton"> Visibility </div>
+      <ul class="visibilityChange">
+        <li>
+          <button class="transOn">Transparency On</button>
+        </li>
+        <li>
+          <button class="transOff">Transparency Off</button>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="window windowEmail">
     <div class="windowBar">
@@ -201,7 +197,7 @@
       <input type="email" name="_replyto" placeholder="Email">
       <input type="text" name="_gotcha" style="display:none">
       <textarea type="text" name="message" placeholder="Let's work on something..."></textarea>
-      <input type="submit" value="SEND">
+      <input type="submit" value="Send">
       <input type="hidden" name="_next" value="//theiananderson.com/submit.html">
     </form>
   </div>
@@ -215,7 +211,7 @@
   span.welcomeText
       h4
           | Hey there! My name is Ian Anderson. I am a Frontend Web Developer. Welcome to my site!
-  
+          
       h5 Odds are I would love to work with you, so go ahead, drop me a line.
       h5
           | - Click on the folders to the right to read some more about me or view some of my work.
@@ -233,23 +229,26 @@
       </ul>
     </div>
     <div class="portfolioGrid">
-      <div class="item" id="itemPersonal"><img src="images/personal.jpg">
-        <p>Personal Webpage  </p>
+      <div id="itemC3" class="item"><img src="images/c3back.jpg">
+        <p>c3 Backflow</p>
       </div>
-      <div class="item" id="itemWeather"><img src="images/weather.jpg">
+      <div id="itemWeather" class="item"><img src="images/weather.jpg">
         <p>Weather App </p>
       </div>
-      <div class="item" id="itemCate"><img src="images/cate_case1.jpg">
-        <p>MaryCateBrown.com</p>
+      <div id="itemHeir" class="item"><img src="images/HeirAtelier_crop.jpg">
+        <p>Heir Atelier</p>
       </div>
-      <div class="item" id="itemForest"><img src="images/forest_case.jpg">
+      <div id="itemForest" class="item"><img src="images/forest_case.jpg">
         <p>HTML Template</p>
       </div>
-      <div class="item" id="itemTaco"><img src="images/taco_case1.jpg">
-        <p>Restaurant Mockup</p>
+      <div id="itemKynews" class="item"><img src="images/mykynews.jpg">
+        <p>myKYnews   </p>
       </div>
-      <div class="item" id="itemPrompt"><img src="images/case_prompt.jpg">
-        <p>Design Prompt Generator</p>
+      <div id="itemTaco" class="item"><img src="images/taco_case1.jpg">
+        <p>Mexican Restaurant</p>
+      </div>
+      <div id="itemWholeCar" class="item"><img src="images/thewholecar.jpg">
+        <p>The Whole Car</p>
       </div>
     </div>
   </div>
@@ -264,43 +263,50 @@
       </ul>
     </div>
     <div class="galleryWrapper">
-      <div class="galleryItem" id="personal">
-        <div class="galleryImage"><img src="images/personal.jpg"></div>
+      <div id="heir" class="galleryItem">
+        <div class="galleryImage"><img src="images/HeirAtelier_crop.jpg"></div>
         <div class="galleryText">
           <p>I drew a lot of inspiration from various operating systems to complete my personal site. Designed to resemble and in some ways function like many modern computer desktop environments the goal is to stand out from the monotonous style of most developer&apos;s personal web pages.</p>
         </div>
       </div>
-      <div class="galleryItem" id="forest">
+      <div id="forest" class="galleryItem">
         <div class="galleryImage"><img src="images/forest_case.jpg"></div>
         <div class="galleryText">
           <p>A simple template that could be used for a number of website styles, ranging from restaurants to a travel blog. I used a few scroll reveal elements to give the page some life and fixed backgrounds to add depth. Keep in mind this is still very much a work in progress but it&apos;s a good glimpse into my work flow.</p><a href="/forest/home.html" target="_blank">
             <p>View Site</p></a>
         </div>
       </div>
-      <div class="galleryItem" id="cate">
-        <div class="galleryImage"><img src="images/cate_case2.jpg"></div>
+      <div id="c3" class="galleryItem">
+        <div class="galleryImage"><img src="images/c3back.jpg"></div>
         <div class="galleryText">
-          <p>The goal of this website was simple: to act as a showcase for work in a graphic design portfolio. With this website the client has done freelance design work for individuals and businesses all over the world and has recently secured a position as a graphic designer for a professional sports team.</p><a href="http://www.marycatebrown.com" target="_blank">
+          <p>The goal of this website was simple: to act as a showcase for work in a graphic design portfolio. With this website the client has done freelance design work for individuals and businesses all over the world and has recently secured a position as a graphic designer for a professional sports team.</p><a href="" target="_blank">
             <p> View Site </p></a>
         </div>
       </div>
-      <div class="galleryItem" id="taco">
+      <div id="taco" class="galleryItem">
         <div class="galleryImage"><img src="images/taco_case1.jpg"></div>
         <div class="galleryText">
           <p>I completed the &quot;Taco Lobo&quot; site in about a day. I designed it in the middle of redoing my personal webpage just as a quick refresher after staring and tweaking the same site multiple times over. I wanted this website to reflect everything I desired to see when visiting a restaurant&apos;s website. I want to see is a menu on the webpage, not a downloadable pdf that opens a new window taking me away from their website.</p><a href="/demo/home.html" target="_blank">
             <p>View Site </p></a>
         </div>
       </div>
-      <div class="galleryItem" id="prompts">
-        <div class="galleryImage"><img src="images/case_prompt.jpg"></div>
+      <div id="news" class="galleryItem">
+        <div class="galleryImage"><img src="images/mykynews.jpg"></div>
         <div class="galleryText">
           <p>While it is not a live site yet, I use this site from time to time as a way to random generate design prompts for practice. I plan to develop this further adding multiple variables and custom settings.</p>
           <!--a(href="")//p View Site
           -->
         </div>
       </div>
-      <div class="galleryItem" id="weather">
+      <div id="weather" class="galleryItem">
         <div class="galleryImage"><img src="images/weather.jpg"></div>
+        <div class="galleryText">
+          <p>Weather app website featuring flat material UI and animated weather effects.  </p><a href="/weather/home.html" target="_blank">
+            <p>View Site    </p></a>
+        </div>
+      </div>
+      <div id="wholeCar" class="galleryItem">
+        <div class="galleryImage"><img src="images/thewholecar.jpg"></div>
         <div class="galleryText">
           <p>Weather app website featuring flat material UI and animated weather effects.  </p><a href="/weather/home.html" target="_blank">
             <p>View Site    </p></a>
@@ -328,6 +334,7 @@
   
 </script>
 <script src="js/javascript.js"></script>
+<!--script(src='js/psint_2.js')-->
 <script src="js/paint_ian.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

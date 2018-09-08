@@ -251,13 +251,13 @@ $('.windowGallery').css("display", "none")
 });
 
 //portfolio display
-$('#itemCate').click(function(){
-$('.windowGallery, #cate').css({
+$('#itemC3').click(function(){
+$('.windowGallery, #c3').css({
 "display": "block",
 "position": "absolute",
 "z-index": ++z
 })
-$("#forest, #personal, #ewf, #taco, #news, #prompts, #weather").css('display', 'none')
+$("#forest, #heir, #taco, #news, #wholeCar, #weather").css('display', 'none')
 });
 
 $('#itemForest').click(function(){
@@ -266,25 +266,25 @@ $('.windowGallery, #forest').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #personal, #ewf, #taco, #news, #prompts, #weather ").css('display', 'none')
+$("#c3, #heir, #taco, #news, #wholeCar, #weather ").css('display', 'none')
 });
 
-$('#itemPersonal').click(function(){
-$('.windowGallery, #personal').css({
+$('#itemHeir').click(function(){
+$('.windowGallery, #heir').css({
 "display": "block",
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #ewf, #taco, #news, #prompts, #weather ").css('display', 'none')
+$("#c3, #forest, #taco, #news, #wholeCar, #weather ").css('display', 'none')
 });
 
-$('#itemEWF').click(function(){
-$('.windowGallery, #ewf').css({
+$('#itemKynews').click(function(){
+$('.windowGallery, #news').css({
 "display": "block",
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #taco, #news, #prompts, #weather ").css('display', 'none')
+$("#c3, #forest, #heir, #taco, #wholeCar, #wholeCar, #weather ").css('display', 'none')
 });
 
 $('#itemTaco').click(function(){
@@ -293,18 +293,18 @@ $('.windowGallery, #taco').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #ewf, #news, #prompts, #weather ").css('display', 'none')
+$("#c3, #forest, #heir, #news, #wholeCar, #weather ").css('display', 'none')
 });
 
 
 
-$('#itemPrompt').click(function(){
-$('.windowGallery, #prompts').css({
+$('#itemWholeCar').click(function(){
+$('.windowGallery, #wholeCar').css({
 "display": "block",
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #ewf, #taco, #news, #weather ").css('display', 'none')
+$("#c3, #forest, #heir, #taco, #news, #weather ").css('display', 'none')
 });
 
 $('#itemWeather').click(function(){
@@ -313,19 +313,19 @@ $('.windowGallery, #weather').css({
 "position": "absolute",
 "z-index": ++z
 })
-$("#cate, #forest, #personal, #ewf, #taco, #prompts, #news ").css('display', 'none')
+$("#c3, #forest, #heir, #taco, #wholeCar, #news ").css('display', 'none')
 });
 
 //settings hide and show
 
-$('.settingsButton').click(function(){
-    $('.backgroundChange').css('display', 'inline-block')
-    $('.visibilityChange').css('display', 'none')
-});
-$('.visibilityButton').click(function(){
-    $('.visibilityChange').css('display', 'inline-block')
-    $('.backgroundChange').css('display', 'none')
-});
+    /*$('.settingsButton').click(function(){
+        $('.backgroundChange').css('display', 'inline-block')
+        $('.visibilityChange').css('display', 'none')
+    });
+    $('.visibilityButton').click(function(){
+        $('.visibilityChange').css('display', 'inline-block')
+        $('.backgroundChange').css('display', 'none')
+    });*/
 
 // Transparency change
 $('.transOn').click(function(){
@@ -358,22 +358,27 @@ $('.background5').click(function() {
 $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
 });
 
-//loader fade in/out
-setTimeout(function(){
- $('.loaderWrapper').remove();
-    }, 2000);
 
-//$(".wrapper").hide(0).delay(000).fadeIn(5000)
 
-//typed.js
-$(function(){
-  $(".loadText").typed({
-    strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Jade <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
-     cursorChar: "_",
-    typeSpeed: -75
-  })
 
-  });
+
+  //typed.js
+        $(function(){
+              $(".loadText").typed({
+                strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Pug <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
+                 cursorChar: "_",
+                typeSpeed: -75
+              })
+
+          });
+          //loader fade in/out
+          setTimeout(function(){
+           $('.loaderWrapper').remove();
+       }, 5000);
+
+        $(".wrapper").hide(0).delay(5000).fadeIn(1500)
+
+
 
 //moment.js
   var datetime = null,

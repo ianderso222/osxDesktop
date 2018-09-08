@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Frontend Developer Ian Anderson</title>
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+    <link link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/typed.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="topNav">
+        <ul class="left">
+          <li class="miniLogo">IA</li>
+          <li class="bold">ianOS</li>
+          <li>File</li>
+          <li>Edit</li>
+          <li>View</li>
+          <li class="help">Help</li>
+        </ul>
+        <ul class="right">
+          <li class="glyphicon glyphicon-signal"></li>
+          <li>100%</li>
+          <li id="time"></li>
+          <li>Ian Anderson</li>
+        </ul>
+      </div>
+      <div class="window windowSubmit">
+        <div class="windowBar">
+          <ul class="tab">
+            <li>EMAIL SENT</li>
+          </ul>
+        </div>
+        <div class="message">
+          <p>Your message was sent and a reply will be on it's way in no time.</p>
+          <p>Well, probably less than 24 hours. </p><a href="//theiananderson.com/home.html">
+            <button class="return">RETURN TO HOME</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    //moment.js
+      var datetime = null,
+              date = null;
+              
+      var update = function () {
+      date = moment(new Date())
+      datetime.html(date.format('dddd h:mm A'));
+      };
+      
+      $(document).ready(function(){
+      datetime = $('#time')
+      update();
+      setInterval(update, 1000);
+      });
+      
+  </script>
+  <script src="js/javascript.js"></script>
+</html>

@@ -2,24 +2,30 @@ $bar: rgb(245,245,245)
 $transp-bar: rgba(245,245,245,0.8)
 $background: rgba(245,245,245,1)
 $green: #A4FF73
+$text: #525354
 $dark-gray: #858585
 $light-gray: #CACACA
 $tab-gray: #B1B1B1
 $white: #ffffff
 $blue: #63B8FF
+$newBlue: #1a73e8
 $blueButton: rgba(99, 184, 255, 0.58)
 $grey-blue: #D8DDE2
 $red: #FF7373
 $yellow: #FFEE73
 $transp-text: rgba(1,1,1,0.6)
 $windowBar: linear-gradient(180deg, #cbcbcb, #d7d7d7)
-$emailButton: linear-gradient(0deg, #39B54A, #B1E5CA)
+$emailButton: #FF7373
 
 
-
+*
+    font-family: 'Noto Sans JP', sans-serif
 body
     margin: 0
     overflow: hidden
+    -webkit-font-smoothing: antialiased
+
+
 
 .showMenu
     height: 229.2px
@@ -35,8 +41,6 @@ body
     background: #56CCF2  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2)
     background: linear-gradient(to right, #2F80ED, #56CCF2)
-    //background-image: url(images/wallpaper2.jpg)
-
     background-size: cover
 
     #topNav
@@ -120,28 +124,27 @@ ul.right
 
 
 .desktop_icon
-
     cursor: pointer
     .icon
         padding: 0 20px
         margin: 40px
+
         &:hover
-            background-color: $transp-bar
+            background-color: rgba(245,245,245,0.2)
             border-radius: 5px
-
-
+            transform: translateY(-1px)
+            transition: all .15s ease
     img
         height: auto
-        width: 72px
-
-
-
+        width: 64px
     p
-        width: 72px
+        width: 64px
         text-align: center
         font-weight: 700
         color: rgb(245,245,245)
-        text-shadow: 0px 2px 8px #111111
+        //text-shadow: 0px 2px 8px #111111
+
+        letter-spacing: 1px
 
 .window
     //border: 1px solid black
@@ -190,6 +193,7 @@ ul.right
         width: 32%
         float: left
 
+
         img
             position: absolute
             top: 50%
@@ -215,7 +219,7 @@ ul.right
     bottom: -10px
     left: 50%
     transform: translate(-50%)
-    height: 100px
+    height: 90px
     max-width: 50%
 
     background-color: rgba(151,151,151,0.7)
@@ -255,8 +259,8 @@ ul.right
 
     img
 
-        height: 60px
-        width:  60px
+        height: 50px
+        width:  50px
         margin: 15px 20px
         float: left
         cursor: pointer
@@ -302,80 +306,99 @@ ul.right
 
 
 .windowSettings
-  display: none
-  left: 6%
-  top: 16%
-  position: absolute
-  height: 350px
-  width: 550px
-  background-color: whitesmoke
-  border-radius: 5px
-  z-index: 1
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
-  .setting
-    margin: 0
-    display: block
+    display: none
+    left: 6%
+    top: 16%
+    position: absolute
+    height: 550px
+    width: 350px
+    background-color: whitesmoke
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+    .setting
+        margin: 0
+        display: block
     .left
-      display: inline-block
-      float: left
-      height: 100%
-      .settingsButton, .visibilityButton
+        //display: inline-block
+        //float: left
+        //height: 100%
+    .settingsButton, .visibilityButton
         display: block
         text-align: center
         font-weight: 700
+        font-size: 1.5em
         width: 100%
-        margin: 10px
+        //margin: 10px
         padding: 20px
         border: 0
         border-radius: 0px
         color: rgba(1, 1, 1, 0.7)
-        background: linear-gradient(180deg, #d8dde2, #b1b1b1)
-        cursor: pointer
+        //background: linear-gradient(180deg, #d8dde2, #b1b1b1)
 
-      .settingsButton:hover, .visibilityButton:hover
-        background: linear-gradient(180deg, #7db1e5, #97c1ea)
 
-      .settingsButton:active, .visibilityButton:active
-        background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1)
-        background: -o-linear-gradient(0deg, #cacaca, #b1b1b1)
-        background: linear-gradient(0deg, #cacaca, #b1b1b1)
 
-      .settingsButton:focus, .visibilityButton:focus
+
+
+
+    .settingsButton:focus, .visibilityButton:focus
         outline: 0
 
 
     .right
-      display: inline-block
-      margin: 1% 0 0 10%
-      .backgroundChange, .visibilityChange
-        display: none
+        //display: inline-block
+        //margin: 1% 0 0 10%
+    .backgroundChange, .visibilityChange
+        //display: none
         margin: 0
 
-      .backgroundChange li, .visibilityChange li
+    .backgroundChange li, .visibilityChange li
         width: 100%
 
-      .backgroundChange li button, .visibilityChange li button
-        width: 100%
-        margin: 5px 20%
-        padding: 10px 10px
+    .backgroundChange li button, .visibilityChange li button
+        width: 50%
+        //margin: 5px 20%
+        display: inline-block
+        padding: 10px
+        border-radius: 5px
         border: 0
-        border-radius: 0px
+        margin: 5px 25%
         color: rgba(1, 1, 1, 0.7)
-        background: linear-gradient(180deg, #d8dde2, #b1b1b1)
+        //background: linear-gradient(180deg, #d8dde2, #b1b1b1)
         cursor: pointer
+        font-weight: 700
+        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)
 
-      .backgroundChange li button:hover, .visibilityChange li button:hover
-        background: linear-gradient(180deg, #7db1e5, #97c1ea)
+    .backgroundChange li button:hover, .visibilityChange li button:hover
+        background: #7db1e5
+        transform: translateY(-1px)
+        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)
+        transition: all .15s ease
 
-      .backgroundChange li button:active, .visibilityChange li button:active
+    .backgroundChange li button:active, .visibilityChange li button:active
         background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1)
         background: -o-linear-gradient(0deg, #cacaca, #b1b1b1)
         background: linear-gradient(0deg, #cacaca, #b1b1b1)
 
-      .backgroundChange li button:focus, .visibilityChange li button:focus
+    .backgroundChange li button:focus, .visibilityChange li button:focus
         outline: 0
 
-
+    .background2
+        background: -moz-linear-gradient(-45deg, #a4f4ef 0%, #41e093 36%, #c4c460 67%, #e08879 100%) /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #a4f4ef 0%,#41e093 36%,#c4c460 67%,#e08879 100%) /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #a4f4ef 0%,#41e093 36%,#c4c460 67%,#e08879 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    .background3
+        background: -moz-linear-gradient(-45deg, #a8c6f7 0%, #3265a8 100%) /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #a8c6f7 0%,#3265a8 100%) /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #a8c6f7 0%,#3265a8 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    .background4
+        background: -moz-linear-gradient(-45deg, #999999 0%, #5b5b5b 100%) /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #999999 0%,#5b5b5b 100%) /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #999999 0%,#5b5b5b 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    .background5
+        background: -moz-linear-gradient(-45deg, #273a56 0%, #9b5a4f 37%, #9b5a4f 37%, #9b5a4f 74%, #82afaf 100%) /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #273a56 0%,#9b5a4f 37%,#9b5a4f 37%,#9b5a4f 74%,#82afaf 100%) /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #273a56 0%,#9b5a4f 37%,#9b5a4f 37%,#9b5a4f 74%,#82afaf 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 
 .windowOverview
@@ -409,6 +432,7 @@ ul.right
             width: 100%
             background: #FFFFFF
             border-radius: 0 0 5px 5px
+            cursor: crosshair
 ul#dropdownArea
     position: absolute
     top: 0px
@@ -421,7 +445,7 @@ ul#dropdownArea
         background-color: $blue
         transition: all 0.25s ease-in-out
 
-        &:before, &:after
+        //&:before, &:after
 
         &::before
             width: 20px
@@ -472,12 +496,14 @@ ul#dropdownArea
             border-bottom-left-radius: 5px
             z-index: 1
             overflow: hidden
+            box-shadow: 0 8px 8px rgba(50,50,93,.11), 0 2px 4px rgba(0,0,0,.08)
 
 
 
 
             #paintMenu
                 width: 100%
+
                 #space
                     padding: 10px 0
                     background-color: inherit
@@ -502,7 +528,7 @@ ul#dropdownArea
                     font-family: 'roboto', sans-serif
                     color: rgba(1, 1, 1, 0.6)
 
-                    input#hex
+                    //input#hex
 
 
 
@@ -521,6 +547,7 @@ ul#dropdownArea
                         opacity: .8
                         &:hover
                             opacity: 1
+                            transition: all .125s ease
 
 
                     #orangeBtn
@@ -616,7 +643,7 @@ ul#dropdownArea
         &:focus
             outline: none
     input::-webkit-input-placeholder
-        font-weight: 700
+        font-weight: 500
 
     textarea
         min-height: 200px
@@ -632,17 +659,24 @@ ul#dropdownArea
         &:focus
             outline: none
     input[type=submit]
-        border: 1px solid $light-gray
-        border-bottom-left-radius: 5px
-        border-bottom-right-radius: 5px
+        background-color: $newBlue
+        color: $white
+        border-radius: 3px
         position: absolute
-        bottom: 0
-        left: 0
-        font-weight: 700
+        right: 20px
+        font-weight: 500
+        width: 60px
+        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)
+        letter-spacing: 1px
 
         &:hover
-            background: $emailButton
-            color: $transp-text
+            background: $blue
+            color: $white
+            box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)
+            transform: translateY(-1px)
+            transition: all .15s ease
+
+
     input[name=name]
         padding-left: 10px
         border-bottom: 1px solid $light-gray
@@ -677,49 +711,39 @@ a.desktop_icon
     position: absolute
     left: 5%
     top: 21%
-
-
-
     width: 850px
     background-color: rgba(245,245,245,1)
     border-radius: 5px
     z-index: 0
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
-
     .portfolioGrid
-
         margin: 1% 1% 0 1%
-
-
-
-
-
         .item
             position: relative
             width: 33%
             display: inline-block
-            border: 1px solid $light-gray
+            //border: 1px solid $light-gray
             margin-bottom: 1%
-
-
-
-
+            box-shadow: 0 8px 8px rgba(50,50,93,.11), 0 2px 4px rgba(0,0,0,.08)
+            cursor: pointer
+            border-radius: 5px
             &:hover
-                background: linear-gradient(180deg, #7DB1E5, #97C1EA)
+                background: $blue
+                transform: translateY(-1px)
+                transition: all .15s ease
             img
                 height: auto
                 width: 100%
                 display: inline-block
-
-
-
+                border-radius: 5px 5px 0px 0px
 
             p
                 width: 100%
                 text-align: center
-                font-weight: 300
+                font-weight: 700
                 color: $transp-text
-                margin: 6px 0 0 0
+                margin: 6px
+
 .windowGallery
     height: 600px
     width: 750px
@@ -743,6 +767,7 @@ a.desktop_icon
                 img
                     width: 90%
                     margin: 5%
+                    box-shadow: 0 8px 10px rgba(50,50,93,.11), 0 6px 9px rgba(0,0,0,.08)
             .galleryText
                 p
                     width: 90%

@@ -5,18 +5,16 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
 });
 
 
+
 // set canvas id to variable
   var canvas = document.getElementById('canvasDiv');
 
   // get canvas 2D context and set it to the correct size
   var ctx = canvas.getContext('2d');
-  // add event listeners to specify when functions should be triggered
-  canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mousedown', setPosition);
-  canvas.addEventListener('mousedown', draw);
-  canvas.addEventListener('mouseenter', setPosition);
 
-  // last known position
+
+
+// last known position
   var pos = { x: 0, y: 0 };
 
   // new position from mouse events
@@ -26,15 +24,18 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
   }
 
 
+
 // drawing/paint function
   function draw(e) {
+
     if( $(".window").hasClass("ui-draggable-dragging")) {
       console.log("off")
       return;
     }
 
-
-    if (e.buttons !== 1) return; // if mouse is pressed.....
+    if (e.buttons !== 1){
+        return;
+    } // if mouse is pressed.....
 
     var color = document.getElementById('hex').value;
     var brush = document.getElementById('brushSlider').value;
@@ -58,8 +59,22 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
 
 
 
-
 }// end draw function
+
+
+
+// add event listeners to specify when functions should be triggered
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mousedown', setPosition);
+canvas.addEventListener('mousedown', draw);
+canvas.addEventListener('mouseenter', setPosition);
+
+canvas.addEventListener('touchstart', function() {
+  // the user touched the screen!
+  console.log('touched');
+});
+
+
 
 
     document.getElementById("reset").onclick = function() {

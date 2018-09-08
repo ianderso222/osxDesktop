@@ -1,0 +1,70 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href="styles.css" rel="stylesheet")
+        title Frontend Developer Ian Anderson
+        link(rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16")
+        link(rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32")
+        
+        link(link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
+        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet')
+        
+        link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
+        
+        script(src="js/moment.js") 
+        script(src="js/typed.js")
+        
+        
+    body
+        
+
+        .wrapper
+            #topNav
+                ul.left
+                    li.miniLogo IA
+                    li.bold ianOS
+                    li File
+                    li Edit
+                    li View
+                    li.help Help
+                ul.right
+                    li.glyphicon.glyphicon-signal
+                    li 100%
+                    li#time
+                    li Ian Anderson
+                    
+            .window.windowSubmit
+                .windowBar
+                    ul.tab
+                        li EMAIL SENT
+                .message
+                    p Your message was sent and a reply will be on it's way in no time.
+                    p Well, probably less than 24 hours. 
+                    
+                    
+                    a(href="//theiananderson.com/home.html") 
+                        button.return RETURN TO HOME
+                    
+                
+                
+    script.
+        //moment.js
+          var datetime = null,
+                  date = null;
+        
+          var update = function () {
+          date = moment(new Date())
+          datetime.html(date.format('dddd h:mm A'));
+          };
+        
+          $(document).ready(function(){
+          datetime = $('#time')
+          update();
+          setInterval(update, 1000);
+          });
+                       
+    script(src='js/javascript.js')

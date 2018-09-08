@@ -8,7 +8,7 @@ head
     
     link(href='styles.css' rel='stylesheet')
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-    link(link='' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
+    link(link='' href='https://fonts.googleapis.com/css?family=Noto+Sans+JP' rel='stylesheet' type='text/css')
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet')
     link(rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css')
     
@@ -20,13 +20,13 @@ head
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')
     script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js')
     script(src='js/moment.js')
-    //script(src='js/typed.js')
-    script(src='js/classie.js')
+    script(src='js/typed.js')
+    
 
-//.loaderWrapper
-    //#loading
-        //p.loadText
-        //p.loadStatus
+.loaderWrapper
+    #loading
+        p.loadText 
+        p.loadStatus 
 .wrapper 
     #topNav
         ul.left
@@ -40,7 +40,7 @@ head
             li.glyphicon.glyphicon-signal
             li 100%
             li#time
-            li Ian Anderson
+            li Guest Client
     .desktop_icon
         #iconOverview.icon
             img(src='images/folder.png')
@@ -147,8 +147,7 @@ head
                 strong I am a frontend web developer based in the Bowling Green, Kentucky area.
             p
                 | Named after Jethro Tull&apos;s frontman. I spend a majority of my time glued to a screen designing and developing websites, learning new languages and skills, or planning my next big adventure.
-            p
-                | My next meal likely consists of pasta or tacos. When I&apos;m not being a developer I hike, play tennis, or travel.
+            
     .window.windowSettings
         .windowBar
             ul.button
@@ -156,13 +155,10 @@ head
                 li.glyphicon.glyphicon-minus-sign.settingsMin
             ul.tab
                 li SETTINGS  
-        span.setting
-            .left
-                .settingsButton  Set Wallpaper
-                .visibilityButton  Visibility 
-            .right
+        .setting
+            
+                .settingsButton  Set Background
                 ul.backgroundChange
-                    // li: button.background1 Mountains
                     li
                         button.background2 Sherbet
                     li
@@ -171,6 +167,7 @@ head
                         button.background4 Silver
                     li
                         button.background5 Night Light
+                .visibilityButton  Visibility 
                 ul.visibilityChange
                     li
                         button.transOn Transparency On
@@ -188,7 +185,7 @@ head
             input(type='email' name='_replyto' placeholder='Email')
             input(type='text' name='_gotcha' style='display:none')
             textarea(type='text' name='message' placeholder="Let's work on something...")
-            input(type='submit' value='SEND')
+            input(type='submit' value='Send')
             input(type='hidden' name='_next' value='//theiananderson.com/submit.html')
     //.window.windowWelcome
         .windowBar
@@ -214,24 +211,28 @@ head
             ul.tab
                 li PORTFOLIO    
         .portfolioGrid
-            #itemPersonal.item
-                img(src='images/personal.jpg')
-                p Personal Webpage  
+            #itemC3.item
+                img(src='images/c3back.jpg')
+                p c3 Backflow
             #itemWeather.item
                 img(src='images/weather.jpg')
                 p Weather App 
-            #itemCate.item
-                img(src='images/cate_case1.jpg')
-                p MaryCateBrown.com
+            #itemHeir.item
+                img(src='images/HeirAtelier_crop.jpg')
+                p Heir Atelier
             #itemForest.item
                 img(src='images/forest_case.jpg')
                 p HTML Template
+            #itemKynews.item
+                img(src='images/mykynews.jpg')
+                p myKYnews   
             #itemTaco.item
                 img(src='images/taco_case1.jpg')
-                p Restaurant Mockup
-            #itemPrompt.item
-                img(src='images/case_prompt.jpg')
-                p Design Prompt Generator
+                p Mexican Restaurant
+            #itemWholeCar.item
+                img(src='images/thewholecar.jpg')
+                p The Whole Car
+            
     .window.windowGallery
         .windowBar
             ul.button
@@ -240,9 +241,9 @@ head
             ul.tab
                 li PORTFOLIO GALLERY 
         .galleryWrapper
-            #personal.galleryItem
+            #heir.galleryItem
                 .galleryImage
-                    img(src='images/personal.jpg')
+                    img(src='images/HeirAtelier_crop.jpg')
                 .galleryText
                     p
                         | I drew a lot of inspiration from various operating systems to complete my personal site. Designed to resemble and in some ways function like many modern computer desktop environments the goal is to stand out from the monotonous style of most developer&apos;s personal web pages.
@@ -254,13 +255,13 @@ head
                         | A simple template that could be used for a number of website styles, ranging from restaurants to a travel blog. I used a few scroll reveal elements to give the page some life and fixed backgrounds to add depth. Keep in mind this is still very much a work in progress but it&apos;s a good glimpse into my work flow.
                     a(href='/forest/home.html' target='_blank')
                         p View Site
-            #cate.galleryItem
+            #c3.galleryItem
                 .galleryImage
-                    img(src='images/cate_case2.jpg')
+                    img(src='images/c3back.jpg')
                 .galleryText
                     p
                         | The goal of this website was simple: to act as a showcase for work in a graphic design portfolio. With this website the client has done freelance design work for individuals and businesses all over the world and has recently secured a position as a graphic designer for a professional sports team.
-                    a(href='http://www.marycatebrown.com' target='_blank')
+                    a(href='' target='_blank')
                         p  View Site 
             #taco.galleryItem
                 .galleryImage
@@ -270,9 +271,9 @@ head
                         | I completed the &quot;Taco Lobo&quot; site in about a day. I designed it in the middle of redoing my personal webpage just as a quick refresher after staring and tweaking the same site multiple times over. I wanted this website to reflect everything I desired to see when visiting a restaurant&apos;s website. I want to see is a menu on the webpage, not a downloadable pdf that opens a new window taking me away from their website.
                     a(href='/demo/home.html' target='_blank')
                         p View Site 
-            #prompts.galleryItem
+            #news.galleryItem
                 .galleryImage
-                    img(src='images/case_prompt.jpg')
+                    img(src='images/mykynews.jpg')
                 .galleryText
                     p
                         | While it is not a live site yet, I use this site from time to time as a way to random generate design prompts for practice. I plan to develop this further adding multiple variables and custom settings.
@@ -281,6 +282,13 @@ head
             #weather.galleryItem
                 .galleryImage
                     img(src='images/weather.jpg')
+                .galleryText
+                    p Weather app website featuring flat material UI and animated weather effects.  
+                    a(href='/weather/home.html' target='_blank')
+                        p View Site    
+            #wholeCar.galleryItem
+                .galleryImage
+                    img(src='images/thewholecar.jpg')
                 .galleryText
                     p Weather app website featuring flat material UI and animated weather effects.  
                     a(href='/weather/home.html' target='_blank')
@@ -312,6 +320,7 @@ script.
     });
 
 script(src='js/javascript.js')
+//script(src='js/psint_2.js')
 script(src='js/paint_ian.js')
 script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
