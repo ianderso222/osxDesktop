@@ -23,16 +23,18 @@ head
     script(src='js/typed.js')
     
 
-.loaderWrapper
-    #loading
-        p.loadText 
-        p.loadStatus 
+//- .loaderWrapper
+//-     #loading
+//-         p.loadText 
+//-         p.loadStatus 
+.paint_wall
 .wrapper 
     #topNav
         ul.left
             li.miniLogo IA
             li.bold ianOS
             li File
+                #fileMenu
             li Edit
             li View
             li.help Help
@@ -87,8 +89,12 @@ head
                                 
                                 input(id="brushSlider" type="range" min="5" max="100" value="50" class="slider")
                                     
-                                button#clear CLEAR  
-                                button#reset RESET
+                                button#clear Clear  
+                                button#reset Reset
+                                
+                                button#save Set as Background
+                                button#remove Remove 
+                                
             #paintCanvas
                 canvas(id="canvasDiv" width="550" height="300")        
         //
@@ -159,6 +165,7 @@ head
             
                 .settingsButton  Set Background
                 ul.backgroundChange
+                
                     li
                         button.background2 Sherbet
                     li

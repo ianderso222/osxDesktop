@@ -9,13 +9,26 @@ body {
 }
 
 .showMenu {
-  height: 229.2px;
+  height: 280px;
+  max-height: 280px;
   transition: height 0.4s ease 0.12s;
 }
 
 .hideMenu {
   height: 0px;
   transition: height 0.4s ease 0.12s;
+}
+
+.paint_wall {
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  float: right;
+  border: 20px solid #525354;
+  display: none;
 }
 
 .wrapper {
@@ -241,7 +254,7 @@ ul.right li {
   cursor: pointer;
 }
 #sort img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) translateY(-1px);
   transition: 0.2s;
 }
 
@@ -503,7 +516,8 @@ ul#dropdownArea #dropdown #windowPaintMenu #paintMenu .paintBtn button {
 }
 ul#dropdownArea #dropdown #windowPaintMenu #paintMenu .paintBtn button:hover {
   opacity: 1;
-  transition: all 0.125s ease;
+  transition: all 0.15s ease;
+  transform: translateY(-1px);
 }
 ul#dropdownArea #dropdown #windowPaintMenu #paintMenu .paintBtn #orangeBtn {
   background: #ffb473;
@@ -562,15 +576,17 @@ ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #clear {
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0px;
-  border-radius: 0 0 3px 0;
+  border-radius: 5px;
   width: 50%;
-  float: right;
+  float: left;
   padding: 5px;
   transition: all 0.4s ease;
   opacity: 0.8;
 }
 ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #clear:hover {
   opacity: 1;
+  transform: translateY(-1px);
+  transition: all 0.15s ease;
 }
 ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #reset {
   background: #ffb473;
@@ -579,7 +595,7 @@ ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #reset {
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0px;
-  border-radius: 0 0 0 3px;
+  border-radius: 5px;
   width: 50%;
   float: left;
   padding: 5px;
@@ -588,6 +604,45 @@ ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #reset {
 }
 ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #reset:hover {
   opacity: 1;
+  transform: translateY(-1px);
+  transition: all 0.15s ease;
+}
+ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #save {
+  background: #63b8ff;
+  border: 0;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  transition: all 0.4s ease;
+  opacity: 0.8;
+}
+ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #save:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  transition: all 0.15s ease;
+}
+ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #remove {
+  background: #d284ff;
+  display: none;
+  border: 0;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  transition: all 0.4s ease;
+  opacity: 0.8;
+}
+ul#dropdownArea #dropdown #windowPaintMenu #paintMenu #remove:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  transition: all 0.15s ease;
 }
 
 .windowEmail {

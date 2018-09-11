@@ -341,10 +341,46 @@ $('.transOff').click(function(){
 
 
 
-//background select script
-$('.background1').click(function() {
-$('.wrapper').css('background-image', 'url(images/wallpaper.jpg)');
+
+
+//Set background from canvas
+    $('#save').click(function() {
+
+        var dataURL = canvas.toDataURL('image/png, 1.0');
+
+        var img = document.getElementsByClassName('paint_wall');
+
+        img.src = dataURL;
+
+        $('.paint_wall').css({
+            "background-image": "url('" + img.src + "')",
+            "background-size": "cover",
+            "display": "block"
+
+        });
+
+        $('#remove').css({
+            "display": "block"
+        });
+
+    });
+
+
+$('#remove').click(function() {
+    $('.paint_wall').css("display", "none");
+    $('#remove').css({
+        "display": "none"
+    });
 });
+
+
+
+
+
+
+
+//background select script
+
 $('.background2').click(function() {
 $('.wrapper').css('background-image', 'url(images/wallpaper2.jpg)');
 });
@@ -360,23 +396,22 @@ $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
 
 
 
-
-
-  //typed.js
-        $(function(){
-              $(".loadText").typed({
-                strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Pug <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
-                 cursorChar: "_",
-                typeSpeed: -75
-              })
-
-          });
-          //loader fade in/out
-          setTimeout(function(){
-           $('.loaderWrapper').remove();
-       }, 5000);
-
-        $(".wrapper").hide(0).delay(5000).fadeIn(1500)
+    //
+    // //typed.js
+    //     $(function(){
+    //           $(".loadText").typed({
+    //             strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Pug <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
+    //              cursorChar: "_",
+    //             typeSpeed: -75
+    //           })
+    //
+    //       });
+    //       //loader fade in/out
+    //       setTimeout(function(){
+    //        $('.loaderWrapper').remove();
+    //    }, 5000);
+    //
+    //     $(".wrapper").hide(0).delay(5000).fadeIn(1500)
 
 
 

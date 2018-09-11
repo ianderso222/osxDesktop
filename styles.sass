@@ -28,12 +28,24 @@ body
 
 
 .showMenu
-    height: 229.2px
+    height: 280px
+    max-height: 280px
     transition: height .4s ease .12s
 
 .hideMenu
     height: 0px
     transition: height .4s ease .12s
+
+.paint_wall
+    width: 800px
+    height: 500px
+    position: absolute
+    transform: translate(-50%, -50%)
+    top: 50%
+    left: 50%
+    float: right
+    border: 20px solid $text
+    display: none
 
 .wrapper
     max-width: 100%
@@ -75,6 +87,11 @@ ul.left
         margin: 0
         padding: 0 10px
         font-size: 16px
+        //#fileMenu
+            width: 200px
+            height: 200px
+            background: pink
+            position: absolute
 
 
 li.miniLogo
@@ -149,6 +166,7 @@ ul.right
 .window
     //border: 1px solid black
     position: absolute
+
 
     .windowBar
         height: 40px
@@ -265,7 +283,7 @@ ul.right
         float: left
         cursor: pointer
         &:hover
-            transform: scale(1.1)
+            transform: scale(1.1) translateY(-1px)
             transition: .2s
 
 #noSort
@@ -382,6 +400,9 @@ ul.right
 
     .backgroundChange li button:focus, .visibilityChange li button:focus
         outline: 0
+
+
+
 
     .background2
         background: -moz-linear-gradient(-45deg, #a4f4ef 0%, #41e093 36%, #c4c460 67%, #e08879 100%) /* FF3.6-15 */
@@ -547,7 +568,8 @@ ul#dropdownArea
                         opacity: .8
                         &:hover
                             opacity: 1
-                            transition: all .125s ease
+                            transition: all .15s ease
+                            transform: translateY(-1px)
 
 
                     #orangeBtn
@@ -597,14 +619,17 @@ ul#dropdownArea
                     font-weight: 700
                     font-size: 12px
                     letter-spacing: 0px
-                    border-radius: 0 0 3px 0
+                    border-radius: 5px
                     width: 50%
-                    float: right
+                    float: left
                     padding: 5px
                     transition: all 0.4s ease
                     opacity: .8
+
                     &:hover
                         opacity: 1
+                        transform: translateY(-1px)
+                        transition: all .15s ease
                 #reset
                     background: #FFB473
                     border: 0
@@ -612,7 +637,7 @@ ul#dropdownArea
                     font-weight: 700
                     font-size: 12px
                     letter-spacing: 0px
-                    border-radius: 0 0 0 3px
+                    border-radius: 5px
                     width: 50%
                     float: left
                     padding: 5px
@@ -620,6 +645,44 @@ ul#dropdownArea
                     opacity: .8
                     &:hover
                         opacity: 1
+                        transform: translateY(-1px)
+                        transition: all .15s ease
+
+                #save
+                    background: #63B8FF
+                    border: 0
+                    color: rgba(245,245,245,1)
+                    font-weight: 700
+                    font-size: 12px
+                    letter-spacing: 0px
+                    border-radius: 5px
+                    width: 100%
+                    //float: left
+                    padding: 5px
+                    transition: all 0.4s ease
+                    opacity: .8
+                    &:hover
+                        opacity: 1
+                        transform: translateY(-1px)
+                        transition: all .15s ease
+                #remove
+                    background: #D284FF
+                    display: none
+                    border: 0
+                    color: rgba(245,245,245,1)
+                    font-weight: 700
+                    font-size: 12px
+                    letter-spacing: 0px
+                    border-radius: 5px
+                    width: 100%
+                    //float: left
+                    padding: 5px
+                    transition: all 0.4s ease
+                    opacity: .8
+                    &:hover
+                        opacity: 1
+                        transform: translateY(-1px)
+                        transition: all .15s ease
 .windowEmail
     display: none
     position: absolute

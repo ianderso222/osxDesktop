@@ -119,9 +119,11 @@ canvas.addEventListener('touchstart', function() {
 }; // set color to green
 
     document.getElementById("purpBtn").onclick = function() {
-    document.getElementById("hex").value = ('#d284ff');
+    document.getElementById("hex").value = ('#D284FF');
     document.getElementById('space').style.backgroundColor = '#d284ff';
 }; // set color to purple
+
+
 
 $( "#dropdownArea" ).click(function() {
     $('#windowPaintMenu').toggleClass("hideMenu showMenu");
