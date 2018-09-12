@@ -360,7 +360,9 @@ $('.transOff').click(function(){
         });
 
         $('#remove').css({
-            "display": "block"
+            "visibility": "visible",
+            "opacity": "1"
+
         });
 
     });
@@ -369,7 +371,10 @@ $('.transOff').click(function(){
 $('#remove').click(function() {
     $('.paint_wall').css("display", "none");
     $('#remove').css({
-        "display": "none"
+        "visibility": "hidden",
+        "opacity": "0"
+
+
     });
 });
 

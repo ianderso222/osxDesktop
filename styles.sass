@@ -29,12 +29,13 @@ body
 
 .showMenu
     height: 280px
-    max-height: 280px
     transition: height .4s ease .12s
 
 .hideMenu
     height: 0px
     transition: height .4s ease .12s
+
+
 
 .paint_wall
     width: 800px
@@ -44,7 +45,7 @@ body
     top: 50%
     left: 50%
     float: right
-    border: 20px solid $text
+    border: 2px solid $white
     display: none
 
 .wrapper
@@ -611,78 +612,80 @@ ul#dropdownArea
                         border-radius: 50%
                         background: rgba(61, 117, 255, 1)
                         cursor: pointer
+                #menuButtonGroup
+                    #clear
+                        background: #FF7373
+                        border: 0
+                        color: rgba(245,245,245,1)
+                        font-weight: 700
+                        font-size: 12px
+                        letter-spacing: 0px
+                        border-radius: 15px
+                        width: 50%
+                        float: left
+                        padding: 5px
+                        transition: all 0.4s ease
+                        opacity: .8
 
-                #clear
-                    background: #FF7373
-                    border: 0
-                    color: rgba(245,245,245,1)
-                    font-weight: 700
-                    font-size: 12px
-                    letter-spacing: 0px
-                    border-radius: 5px
-                    width: 50%
-                    float: left
-                    padding: 5px
-                    transition: all 0.4s ease
-                    opacity: .8
+                        &:hover
+                            opacity: 1
+                            transform: translateY(-1px)
+                            transition: all .15s ease
+                    #reset
+                        background: #FFB473
+                        border: 0
+                        color: rgba(245,245,245,1)
+                        font-weight: 700
+                        font-size: 12px
+                        letter-spacing: 0px
+                        border-radius: 15px
+                        width: 50%
+                        float: left
+                        padding: 5px
+                        transition: all 0.4s ease
+                        opacity: .8
+                        &:hover
+                            opacity: 1
+                            transform: translateY(-1px)
+                            transition: all .15s ease
 
-                    &:hover
-                        opacity: 1
-                        transform: translateY(-1px)
-                        transition: all .15s ease
-                #reset
-                    background: #FFB473
-                    border: 0
-                    color: rgba(245,245,245,1)
-                    font-weight: 700
-                    font-size: 12px
-                    letter-spacing: 0px
-                    border-radius: 5px
-                    width: 50%
-                    float: left
-                    padding: 5px
-                    transition: all 0.4s ease
-                    opacity: .8
-                    &:hover
-                        opacity: 1
-                        transform: translateY(-1px)
-                        transition: all .15s ease
+                    #save
+                        background: #63B8FF
+                        border: 0
+                        color: rgba(245,245,245,1)
+                        font-weight: 700
+                        font-size: 12px
+                        letter-spacing: 0px
+                        border-radius: 15px
+                        width: 100%
+                        //float: left
+                        padding: 5px
+                        transition: all 0.4s ease
+                        opacity: .8
+                        &:hover
+                            opacity: 1
+                            transform: translateY(-1px)
+                            transition: all .15s ease
+                    #remove
+                        background: #D284FF
+                        //display: none
+                        border: 0
+                        color: rgba(245,245,245,1)
+                        font-weight: 700
+                        font-size: 12px
+                        letter-spacing: 0px
+                        border-radius: 15px
+                        width: 100%
+                        //float: left
+                        padding: 5px
+                        transition: all 0.15s ease
+                        //opacity: .8
+                        visibility: hidden
 
-                #save
-                    background: #63B8FF
-                    border: 0
-                    color: rgba(245,245,245,1)
-                    font-weight: 700
-                    font-size: 12px
-                    letter-spacing: 0px
-                    border-radius: 5px
-                    width: 100%
-                    //float: left
-                    padding: 5px
-                    transition: all 0.4s ease
-                    opacity: .8
-                    &:hover
-                        opacity: 1
-                        transform: translateY(-1px)
-                        transition: all .15s ease
-                #remove
-                    background: #D284FF
-                    display: none
-                    border: 0
-                    color: rgba(245,245,245,1)
-                    font-weight: 700
-                    font-size: 12px
-                    letter-spacing: 0px
-                    border-radius: 5px
-                    width: 100%
-                    //float: left
-                    padding: 5px
-                    transition: all 0.4s ease
-                    opacity: .8
-                    &:hover
-                        opacity: 1
-                        transform: translateY(-1px)
-                        transition: all .15s ease
+                        &:hover
+                            //opacity: 1
+                            transform: translateY(-1px)
+                            transition: all .15s ease
 .windowEmail
     display: none
     position: absolute
@@ -724,7 +727,7 @@ ul#dropdownArea
     input[type=submit]
         background-color: $newBlue
         color: $white
-        border-radius: 3px
+        border-radius: 15px
         position: absolute
         right: 20px
         font-weight: 500

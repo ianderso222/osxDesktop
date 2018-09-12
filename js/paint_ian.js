@@ -64,15 +64,11 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
 
 
 // add event listeners to specify when functions should be triggered
+
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', setPosition);
 canvas.addEventListener('mousedown', draw);
 canvas.addEventListener('mouseenter', setPosition);
-
-canvas.addEventListener('touchstart', function() {
-  // the user touched the screen!
-  console.log('touched');
-});
 
 
 
