@@ -28,7 +28,7 @@ body
 
 
 .showMenu
-    height: 280px
+    height: 300px
     transition: height .4s ease .12s
 
 .hideMenu
@@ -38,14 +38,13 @@ body
 
 
 .paint_wall
-    width: 800px
+    min-width: 500px
     height: 500px
     position: absolute
     transform: translate(-50%, -50%)
     top: 50%
     left: 50%
     float: right
-    border: 2px solid $white
     display: none
 
 .wrapper
@@ -111,7 +110,7 @@ ul.right
         margin: 0
         padding: 1px 10px
         font-size: 16px
-        font-weight: 500
+
 
 
 #iconOverview
@@ -133,7 +132,10 @@ ul.right
     position: absolute
     right: 20px
     top: 60px
-
+#iconTestimonials
+    position: absolute
+    right: 20px
+    top: 460px
 //#iconWelcome
     position: absolute
     right: 20px
@@ -158,7 +160,7 @@ ul.right
     p
         width: 64px
         text-align: center
-        font-weight: 700
+        //
         color: rgb(245,245,245)
         //text-shadow: 0px 2px 8px #111111
 
@@ -186,7 +188,7 @@ ul.right
             li
                 //background-color: $tab-gray
                 padding: 3px 12px
-                font-weight: 900
+
 
                 //border-radius: 5px
                 color: rgba(1,1,1,0.6)
@@ -226,7 +228,7 @@ ul.right
         float: right
 
         p
-            font-weight: 700
+
             span
                 font-weight: 300
                 padding-left: 10px
@@ -243,7 +245,9 @@ ul.right
 
     background-color: rgba(151,151,151,0.7)
     border-radius: 5px
-    z-index: 9999
+    z-index: 999
+
+
 
 
 
@@ -321,6 +325,61 @@ ul.right
         width: 90%
         font-family: monospace
         font-size: 16px
+.windowTestimonial
+    display: none
+    position: absolute
+    left: 9%
+    top: 26%
+    height: 550px
+    width: 550px
+    background-color: rgba(245,245,245,1)
+    border-radius: 5px
+    z-index: 1
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+
+
+    span.test
+        .talk-bubble
+            margin: 15px 80px 0px 80px
+            display: inline-block
+            position: relative
+            width: 75%
+            height: auto
+            background-color: $grey-blue
+            box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+        .round
+            border-radius: 30px
+            -webkit-border-radius: 30px
+            -moz-border-radius: 30px
+
+        .tri-right.btm-left
+            &:after
+                content: ' '
+                position: absolute
+                width: 0
+                height: 0
+                left: 0px
+                right: auto
+                top: auto
+                bottom: -20px
+                border: 22px solid
+                border-color: transparent transparent transparent $grey-blue
+
+
+            p
+                margin: 2% 5%
+                width: 90%
+                font-size: 12px
+                font-style: italic
+
+        .name
+            margin: 5px 30px
+            display: inline-block
+            width: 128px
+            img.testIcon
+                width: 64px
+            span
+                display: block
 
 
 
@@ -345,7 +404,7 @@ ul.right
     .settingsButton, .visibilityButton
         display: block
         text-align: center
-        font-weight: 700
+
         font-size: 1.5em
         width: 100%
         //margin: 10px
@@ -385,7 +444,7 @@ ul.right
         color: rgba(1, 1, 1, 0.7)
         //background: linear-gradient(180deg, #d8dde2, #b1b1b1)
         cursor: pointer
-        font-weight: 700
+
         box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)
 
     .backgroundChange li button:hover, .visibilityChange li button:hover
@@ -488,7 +547,7 @@ ul#dropdownArea
         background-color: #8a8a8a
         right: 20px
         top: 12px
-        transition: all 0.25s ease-in-out
+        transition: all 0.175s ease-in-out
         &:before, &:after
             content: ""
             position: absolute
@@ -501,12 +560,12 @@ ul#dropdownArea
             top: 7px
             width: 20px
             background-color: #8a8a8a
-            transition: all 0.5s ease-in-out
+            transition: all 0.15s ease-in-out
         &:after
             top: 14px
             width: 20px
             background-color: #8a8a8a
-            transition: all 0.75s ease-in-out
+            transition: all 0.125s ease-in-out
 
 
         #windowPaintMenu
@@ -529,11 +588,11 @@ ul#dropdownArea
                 #space
                     padding: 10px 0
                     background-color: inherit
-                    transition: all 0.4s ease
+                    transition: all 0.25s ease
 
                 .paintMenuTitle
                     padding: 6px 0
-                    font-weight: 900
+
                     color: rgba(1, 1, 1, 0.6)
                     letter-spacing: 0px
                     text-align: center
@@ -546,7 +605,7 @@ ul#dropdownArea
                     background: $background
                     border: 0px
                     letter-spacing: 1px
-                    font-weight: 500
+
                     font-family: 'roboto', sans-serif
                     color: rgba(1, 1, 1, 0.6)
 
@@ -613,17 +672,20 @@ ul#dropdownArea
                         background: rgba(61, 117, 255, 1)
                         cursor: pointer
                 #menuButtonGroup
+                    text-align: center
+
                     #clear
                         background: #FF7373
                         border: 0
                         color: rgba(245,245,245,1)
-                        font-weight: 700
+
                         font-size: 12px
                         letter-spacing: 0px
                         border-radius: 15px
-                        width: 50%
-                        float: left
+                        min-width: 50px
                         padding: 5px
+                        margin: 2px
+
                         transition: all 0.4s ease
                         opacity: .8
 
@@ -635,13 +697,13 @@ ul#dropdownArea
                         background: #FFB473
                         border: 0
                         color: rgba(245,245,245,1)
-                        font-weight: 700
+
                         font-size: 12px
                         letter-spacing: 0px
                         border-radius: 15px
-                        width: 50%
-                        float: left
+                        min-width: 50px
                         padding: 5px
+                        margin: 2px
                         transition: all 0.4s ease
                         opacity: .8
                         &:hover
@@ -653,13 +715,13 @@ ul#dropdownArea
                         background: #63B8FF
                         border: 0
                         color: rgba(245,245,245,1)
-                        font-weight: 700
+
                         font-size: 12px
                         letter-spacing: 0px
                         border-radius: 15px
-                        width: 100%
-                        //float: left
+                        min-width: 50px
                         padding: 5px
+                        margin: 2px
                         transition: all 0.4s ease
                         opacity: .8
                         &:hover
@@ -671,13 +733,13 @@ ul#dropdownArea
                         //display: none
                         border: 0
                         color: rgba(245,245,245,1)
-                        font-weight: 700
+
                         font-size: 12px
                         letter-spacing: 0px
                         border-radius: 15px
-                        width: 100%
-                        //float: left
+                        min-width: 50px
                         padding: 5px
+                        margin: 2px
                         transition: all 0.15s ease
                         //opacity: .8
                         visibility: hidden
@@ -708,8 +770,8 @@ ul#dropdownArea
         border: 0
         &:focus
             outline: none
-    input::-webkit-input-placeholder
-        font-weight: 500
+    //input::-webkit-input-placeholder
+
 
     textarea
         min-height: 200px
@@ -730,7 +792,7 @@ ul#dropdownArea
         border-radius: 15px
         position: absolute
         right: 20px
-        font-weight: 500
+
         width: 60px
         box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)
         letter-spacing: 1px
@@ -806,7 +868,7 @@ a.desktop_icon
             p
                 width: 100%
                 text-align: center
-                font-weight: 700
+
                 color: $transp-text
                 margin: 6px
 
@@ -834,11 +896,38 @@ a.desktop_icon
                     width: 90%
                     margin: 5%
                     box-shadow: 0 8px 10px rgba(50,50,93,.11), 0 6px 9px rgba(0,0,0,.08)
+                    &:hover
+                        box-shadow: 0 8px 8px rgba(50,50,93,.11), 0 2px 4px rgba(0,0,0,.08)
+                        transform: translateY(-1px)
+                        transition: all .15s ease
+
             .galleryText
                 p
                     width: 90%
                     margin: 0 5%
+                button
+                    background-color: $newBlue
+                    color: $white
+                    border-radius: 15px
+                    position: absolute
+                    right: 40px
+                    padding: 5px
+                    width: 100px
+                    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)
+                    letter-spacing: 1px
+                    border: none
 
+                    &:hover
+                        background: $blue
+                        color: $white
+                        box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)
+                        transform: translateY(-1px)
+                        transition: all .15s ease
+                    a
+                        &:hover
+                            text-decoration: none
+                        p
+                            color: $white
         #forest
             display: none
         #cate
@@ -868,7 +957,9 @@ a.desktop_icon
 
 
 @media screen and (max-width: 414px) and (max-height: 736px)
-
+    .paint_wall
+        min-width: 250px
+        height: 250px
     #dock
         position: fixed
         display: inline-block
@@ -919,7 +1010,7 @@ a.desktop_icon
             text-align: center
             font-weight: 100
             color: rgb(245,245,245)
-            text-shadow: 0px 2px 8px #111111
+
     #iconOverview
         position: absolute
         right: 10px
@@ -1040,7 +1131,7 @@ a.desktop_icon
                     margin: 0
                     padding: 1px 5px
                     font-size: 12px
-                    font-weight: 500
+
 
 @media screen and (min-width: 1024px) and (max-width: 1200px)
 
@@ -1092,13 +1183,17 @@ a.desktop_icon
             width: 60px
             font-size: 16px
             text-align: center
-            font-weight: 500
+
             color: rgb(245,245,245)
-            text-shadow: 0px 2px 8px #111111
+
+    #iconPaint
+        position: absolute
+        right: 10px
+        top: 30px
     #iconOverview
         position: absolute
         right: 10px
-        top: 140px
+        top: 130px
 
 
     #iconAbout
@@ -1109,12 +1204,18 @@ a.desktop_icon
     #iconPortfolio
         position: absolute
         right: 10px
-        top: 320px
+        top: 330px
+
+
+    #iconTestimonials
+        position: absolute
+        right: 10px
+        top: 430px
 
     #iconWelcome
         position: absolute
         right: 10px
-        top: 50px
+        top: 30px
 
     .window
 
@@ -1237,13 +1338,17 @@ a.desktop_icon
             width: 60px
             font-size: 16px
             text-align: center
-            font-weight: 500
+
             color: rgb(245,245,245)
-            text-shadow: 0px 2px 8px #111111
+
+    #iconPaint
+        position: absolute
+        right: 10px
+        top: 30px
     #iconOverview
         position: absolute
         right: 10px
-        top: 140px
+        top: 130px
 
 
     #iconAbout
@@ -1254,12 +1359,18 @@ a.desktop_icon
     #iconPortfolio
         position: absolute
         right: 10px
-        top: 320px
+        top: 330px
+
+
+    #iconTestimonials
+        position: absolute
+        right: 10px
+        top: 430px
 
     #iconWelcome
         position: absolute
         right: 10px
-        top: 50px
+        top: 30px
 
     .window
 
@@ -1363,13 +1474,42 @@ a.desktop_icon
 
         cursor: pointer
         .icon
-            padding: 15px 20px
+            padding: 5px 20px
             margin: 10px 0 0 0
             &:hover
                 background-color: $transp-bar
                 border-radius: 5px
 
+        #iconPaint
+            position: absolute
+            right: 10px
+            top: 30px
+        #iconOverview
+            position: absolute
+            right: 10px
+            top: 100px
 
+
+        #iconAbout
+            position: absolute
+            right: 10px
+            top: 170px
+
+        #iconPortfolio
+            position: absolute
+            right: 10px
+            top: 240px
+
+
+        #iconTestimonials
+            position: absolute
+            right: 10px
+            top: 310px
+
+        #iconWelcome
+            position: absolute
+            right: 10px
+            top: 30px
         img
             height: auto
             width: 40px
@@ -1380,29 +1520,10 @@ a.desktop_icon
             width: 40px
             font-size: 10px
             text-align: center
-            font-weight: 500
+
             color: rgb(245,245,245)
             text-shadow: 0px 2px 8px #111111
-    #iconOverview
-        position: absolute
-        right: 10px
-        top: 60px
 
-
-    #iconAbout
-        position: absolute
-        right: 10px
-        top: 120px
-
-    #iconPortfolio
-        position: absolute
-        right: 10px
-        top: 180px
-
-    #iconWelcome
-        position: absolute
-        right: 10px
-        top: 5px
 
     .window
         width: 80%
@@ -1534,9 +1655,12 @@ a.desktop_icon
                     margin: 0
                     padding: 1px 5px
                     font-size: 12px
-                    font-weight: 500
+
 
 @media screen and (min-width: 400px) and (max-width: 599px)
+    .paint_wall
+        min-width: 250px
+        height: 250px
     #dock
         position: fixed
         display: inline-block
@@ -1587,22 +1711,32 @@ a.desktop_icon
             text-align: center
             font-weight: 100
             color: rgb(245,245,245)
-            text-shadow: 0px 2px 8px #111111
+
+    #iconPaint
+        position: absolute
+        right: 10px
+        top: 30px
     #iconOverview
         position: absolute
         right: 10px
-        top: 90px
+        top: 100px
 
 
     #iconAbout
         position: absolute
         right: 10px
-        top: 150px
+        top: 170px
 
     #iconPortfolio
         position: absolute
         right: 10px
-        top: 210px
+        top: 240px
+
+
+    #iconTestimonials
+        position: absolute
+        right: 10px
+        top: 310px
 
     #iconWelcome
         position: absolute
@@ -1714,9 +1848,12 @@ a.desktop_icon
                     margin: 0
                     padding: 1px 5px
                     font-size: 12px
-                    font-weight: 500
+
 
 @media screen and (max-width: 399px)
+    .paint_wall
+        min-width: 250px
+        height: 250px
     #dock
         position: fixed
         display: inline-block
@@ -1767,7 +1904,7 @@ a.desktop_icon
             text-align: center
             font-weight: 100
             color: rgb(245,245,245)
-            text-shadow: 0px 2px 8px #111111
+
     #iconOverview
         position: absolute
         right: 5px
@@ -1783,6 +1920,15 @@ a.desktop_icon
         position: absolute
         right: 5px
         top: 320px
+
+    #iconPaint
+        position: absolute
+        right: 5px
+        top: 60px
+    #iconTestimonials
+        position: absolute
+        right: 5px
+        top: 405px
 
     #iconWelcome
         position: absolute
@@ -1802,8 +1948,7 @@ a.desktop_icon
         .windowBar
             height: 30px
             background: $grey-blue
-            border-top-left-radius: 5px
-            border-top-right-radius: 5px
+
 
 
 
@@ -1819,7 +1964,7 @@ a.desktop_icon
                 li
                     //background-color: $tab-gray
                     padding: 3px 12px
-                    font-weight: 900
+
 
                     //border-radius: 5px
                     color: rgba(1,1,1,0.6)
@@ -1860,7 +2005,7 @@ a.desktop_icon
             margin: 1% 1% 0 1%
             .item
                 position: relative
-                width: 32.33%
+                width: 49.5%
                 display: inline-block
                 border: 1px solid $light-gray
                 margin-bottom: 1%
@@ -1878,6 +2023,32 @@ a.desktop_icon
                     font-weight: 300
                     color: $transp-text
                     margin: 2px 0 0 0
+    .windowOverview
+        display: none
+        position: absolute
+        left: 0
+        top: 20px
+        width: 100%
+        background-color: rgba(245,245,245,1)
+        border-radius: 0px
+        z-index: 0
+        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
+        .windowIcon
+            margin: 0 auto
+            display: block
+            float: none
+            width: 50%
+            img
+                position: relative
+                top: 10px
+                transform: none
+                width: 100%
+                border-radius: 50%
+
+
+        .about
+            text-align: center
+            width: 100%
 
     .windowWelcome
         width: 75%
@@ -1918,17 +2089,18 @@ a.desktop_icon
                     margin: 0
                     padding: 1px 5px
                     font-size: 12px
-                    font-weight: 500
+
 
 
 @media screen and (min-width: 1201px) and (max-width: 1510px)
-    .windowGallery
+// .paint_wall
+//     max-width: 500px
+//     height: 100vh
+//     position: relative
+//     transform: none
+//     top: 0
+//     left: 0
 
-        width: 45%
-        position: absolute
-        border-radius: 5px
-        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
-        left: 40%
-        top: 10%
-        background-color: rgba(245,245,245,1)
-        display: none
+
+.windowGallery
+    left: 40%

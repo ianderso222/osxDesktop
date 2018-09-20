@@ -50,6 +50,9 @@
     <div id="iconPortfolio" class="icon"><img src="images/folderFill.png">
       <p>Portfolio</p>
     </div>
+    <div id="iconTestimonials" class="icon"><img src="images/folder.png">
+      <p>Reviews</p>
+    </div>
     <!--#iconWelcome.icon-->
     <!--img(src='images/folder.png')-->
     <!--p Welcome-->
@@ -93,7 +96,7 @@
         </ul>
       </div>
       <div id="paintCanvas">
-        <canvas id="canvasDiv" width="550" height="300">       </canvas>
+        <canvas id="canvasDiv" width="550" height="550">       </canvas>
       </div>
     </div>
     <!--
@@ -125,7 +128,7 @@
     </div>
     <div class="windowIcon"><img src="images/headShot.jpg"></div><span class="about">
       <h1>Ian Anderson</h1>
-      <h6>Version 4.0</h6>
+      <h6>Version 1.0</h6>
       <h4>Frontend Web Developer/Designer</h4>
       <p>Degree <span> Business Management B.S.</span></p>
       <p>Experience<span>4 Years</span></p>
@@ -144,8 +147,28 @@
       </ul>
     </div>
     <div class="windowIcon"></div><span class="about">
-      <p><strong>I am a frontend web developer based in the Bowling Green, Kentucky area.</strong></p>
+      <p><strong>I am a frontend web developer based in Kentucky.</strong></p>
       <p>Named after Jethro Tull&apos;s frontman. I spend a majority of my time glued to a screen designing and developing websites, learning new languages and skills, or planning my next big adventure.</p></span>
+  </div>
+  <div class="window windowTestimonial">
+    <div class="windowBar">
+      <ul class="button">
+        <li class="glyphicon glyphicon-remove-sign testClose"></li>
+        <li class="glyphicon glyphicon-minus-sign testMin"></li>
+      </ul>
+      <ul class="tab">
+        <li>TESTIMONIALS</li>
+      </ul>
+    </div>
+    <div class="windowIcon"></div><span class="test">
+      <div class="talk-bubble tri-right round btm-left">
+        <p>"Ian accepted a 33% deposit and began working right away. I'm a tough guy to work with, almost always unsatisfied with css responsiveness work, but he dealt with my constant nagging really well. Highly recommend this guy. Thank you!"</p>
+      </div>
+      <div class="name"><img src="images/testIcon.png" class="testIcon"><span>Name here</span></div>
+      <div class="talk-bubble tri-right round btm-left">
+        <p>"I hired Ian to design my website for a hobby game that I play, it started as a basic few hour project and that was the budget we agreed upon. However he went above and beyond working very diligently to make the website everything I ever wanted it to be. I would highly, highly recommend his services if you ever find yourself in need of a great web designer. His customer service and professionalism are above anything I could have asked for."</p>
+      </div>
+      <div class="name"><img src="images/testIcon.png" class="testIcon"><span>Name here</span></div></span>
   </div>
   <div class="window windowSettings">
     <div class="windowBar">
@@ -281,8 +304,9 @@
       <div id="c3" class="galleryItem">
         <div class="galleryImage"><img src="images/c3back.jpg"></div>
         <div class="galleryText">
-          <p>The goal of this website was simple: to act as a showcase for work in a graphic design portfolio. With this website the client has done freelance design work for individuals and businesses all over the world and has recently secured a position as a graphic designer for a professional sports team.</p><a href="" target="_blank">
-            <p> View Site </p></a>
+          <p>While working with C3 Backflow, now Syncta, a company that specializes producing mobile solutions and software for water purveyors and backflow testers, I oversaw and completely redesigned their mobile UI/UX, their user onboarding process, and customer routing platforms.  </p>
+          <button><a href="" target="_blank">
+              <p> View Site </p></a></button>
         </div>
       </div>
       <div id="taco" class="galleryItem">
@@ -317,26 +341,11 @@
     </div>
   </div>
   <div id="dock">
-    <div id="sort"><a href="https://twitter.com/ian_a_anderson" target="_blank"><img id="dockTwitter" src="images/twitter.png"></a><a href="https://www.reddit.com/user/ianaanderson/" target="_blank"><img id="dockReddit" src="images/reddit.png"></a><a href="https://github.com/ianderso222" target="_blank"><img id="dockGithub" src="images/github.png"></a><a href="https://www.instagram.com/ianandrewanderson/" target="_blank"><img id="dockInsta" src="images/insta.png"></a><img id="dockEmail" src="images/email.png"><img id="dockSettings" src="images/Settings.png"></div>
+    <div id="sort"><a href="https://twitter.com/ian_a_anderson" target="_blank"><img id="dockTwitter" src="images/twitter.png"></a><a href="https://www.reddit.com/user/ianaanderson/" target="_blank"><img id="dockReddit" src="images/reddit.png"></a><a href="https://github.com/ianderso222" target="_blank"><img id="dockGithub" src="images/github.png"></a><a href="https://www.instagram.com/ianandrewanderson/" target="_blank"><img id="dockInsta" src="images/insta.png"></a><img id="dockEmail" src="images/email.png"><img id="dockSettings" src="images/Settings.png"><img src="images/folder.png" class="minFolderOverview"></div>
   </div>
 </div>
-<script>
-  //moment.js
-  var datetime = null,
-  date = null;
-  var update = function () {
-  date = moment(new Date())
-  datetime.html(date.format('dddd h:mm A'));
-  };
-  $(document).ready(function(){
-  datetime = $('#time')
-  update();
-  setInterval(update, 1000);
-  });
-  
-</script>
 <script src="js/javascript.js"></script>
-<script src="js/psint_2.js"></script>
+<script src="js/paint_2.js"></script>
 <!--script(src='js/paint_ian.js')-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

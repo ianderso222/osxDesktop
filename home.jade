@@ -57,6 +57,9 @@ body(onload="init()")
         #iconPortfolio.icon
             img(src='images/folderFill.png')
             p Portfolio
+        #iconTestimonials.icon
+            img(src='images/folder.png')
+            p Reviews
         //#iconWelcome.icon
         //img(src='images/folder.png')
         //p Welcome
@@ -97,7 +100,7 @@ body(onload="init()")
                                     button#remove.showRemove Remove 
                                 
             #paintCanvas
-                canvas(id="canvasDiv" width="550" height="300")        
+                canvas(id="canvasDiv" width="550" height="550")        
         //
             .window
                 .windowBar
@@ -124,7 +127,7 @@ body(onload="init()")
             img(src='images/headShot.jpg')
         span.about
             h1 Ian Anderson
-            h6 Version 4.0
+            h6 Version 1.0
             h4 Frontend Web Developer/Designer
             p
                 | Degree 
@@ -151,9 +154,31 @@ body(onload="init()")
         .windowIcon
         span.about
             p
-                strong I am a frontend web developer based in the Bowling Green, Kentucky area.
+                strong I am a frontend web developer based in Kentucky.
             p
                 | Named after Jethro Tull&apos;s frontman. I spend a majority of my time glued to a screen designing and developing websites, learning new languages and skills, or planning my next big adventure.
+    .window.windowTestimonial
+        .windowBar
+            ul.button
+                li.glyphicon.glyphicon-remove-sign.testClose
+                li.glyphicon.glyphicon-minus-sign.testMin
+            ul.tab
+                li TESTIMONIALS
+        .windowIcon
+        span.test
+            .talk-bubble.tri-right.round.btm-left
+                p
+                    | "Ian accepted a 33% deposit and began working right away. I'm a tough guy to work with, almost always unsatisfied with css responsiveness work, but he dealt with my constant nagging really well. Highly recommend this guy. Thank you!"
+            .name
+                img.testIcon(src="images/testIcon.png")
+                span Name here
+            .talk-bubble.tri-right.round.btm-left
+                p
+                    | "I hired Ian to design my website for a hobby game that I play, it started as a basic few hour project and that was the budget we agreed upon. However he went above and beyond working very diligently to make the website everything I ever wanted it to be. I would highly, highly recommend his services if you ever find yourself in need of a great web designer. His customer service and professionalism are above anything I could have asked for."
+            .name
+                img.testIcon(src="images/testIcon.png")
+                span Name here
+            
             
     .window.windowSettings
         .windowBar
@@ -268,9 +293,10 @@ body(onload="init()")
                     img(src='images/c3back.jpg')
                 .galleryText
                     p
-                        | The goal of this website was simple: to act as a showcase for work in a graphic design portfolio. With this website the client has done freelance design work for individuals and businesses all over the world and has recently secured a position as a graphic designer for a professional sports team.
-                    a(href='' target='_blank')
-                        p  View Site 
+                        | While working with C3 Backflow, now Syncta, a company that specializes producing mobile solutions and software for water purveyors and backflow testers, I oversaw and completely redesigned their mobile UI/UX, their user onboarding process, and customer routing platforms.  
+                    button
+                        a(href='' target='_blank')
+                            p  View Site 
             #taco.galleryItem
                 .galleryImage
                     img(src='images/taco_case1.jpg')
@@ -301,6 +327,7 @@ body(onload="init()")
                     p Weather app website featuring flat material UI and animated weather effects.  
                     a(href='/weather/home.html' target='_blank')
                         p View Site    
+    
     #dock
         #sort
             a(href='https://twitter.com/ian_a_anderson' target='_blank')
@@ -313,22 +340,11 @@ body(onload="init()")
                 img#dockInsta(src='images/insta.png')
             img#dockEmail(src='images/email.png')
             img#dockSettings(src='images/Settings.png')
-script.
-    //moment.js
-    var datetime = null,
-    date = null;
-    var update = function () {
-    date = moment(new Date())
-    datetime.html(date.format('dddd h:mm A'));
-    };
-    $(document).ready(function(){
-    datetime = $('#time')
-    update();
-    setInterval(update, 1000);
-    });
+            img.minFolderOverview(src="images/folder.png")
+
 
 script(src='js/javascript.js')
-script(src='js/psint_2.js')
+script(src='js/paint_2.js')
 //script(src='js/paint_ian.js')
 script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

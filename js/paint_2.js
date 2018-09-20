@@ -1,8 +1,32 @@
+
 document.getElementById('space').style.backgroundColor = '#303030';
 $("#hex").on("change keyup paste click", function(colorSwatch) {
     var updateColor = document.getElementById('hex').value;
     document.getElementById('space').style.backgroundColor = updateColor;
 });
+function resize() {
+
+    var canvas = document.getElementById('canvasDiv');
+    var canvasRatio = canvas.height / canvas.width;
+    var windowRatio = window.innerHeight / window.innerWidth;
+    var width;
+    var height;
+
+    if (windowRatio < canvasRatio) {
+        height = window.innerHeight;
+        width = height / canvasRatio;
+    } else {
+        width = window.innerWidth;
+        height = width * canvasRatio;
+    }
+
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+
+    console.log(width + ' ' + height);
+};
+
+window.addEventListener('resize', resize, false);
 
 // Variables for referencing the canvas and 2dcanvas context
     var canvas,ctx;
@@ -14,7 +38,7 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
     var touchX,touchY;
     // Keep track of the old/last position when drawing a line
    // We set it to -1 at the start to indicate that we don't have a good value for it yet
-   var lastX,lastY=-1;
+   var lastX,lastY=0;
 
    // Draws a line between the specified position on the supplied canvas name
     // Parameters are: A canvas context, the x position, the y position, the size of the dot
@@ -23,13 +47,14 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
         var brush = document.getElementById('brushSlider').value;
 
         // If lastX is not set, set lastX and lastY to the current position
-        if (lastX==-1) {
+    if (lastX==-1) {
             lastX=x;
-	    lastY=y;
+	        lastY=y;
         }
 
+
         // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
-        r=0; g=0; b=0; a=255;
+        //r=0; g=0; b=0; a=255;
 
         // Select a fill style
         ctx.strokeStyle = color;
@@ -114,22 +139,23 @@ $("#hex").on("change keyup paste click", function(colorSwatch) {
 
         // Draw a dot if the mouse button is currently being pressed
         if (mouseDown==1) {
-            drawLine(ctx,mouseX,mouseY,12);
+            drawLine(ctx,mouseX,mouseY);
         }
     }
 
     // Get the current mouse position relative to the top-left of the canvas
     function getMousePos(e) {
+        var rect = canvas.getBoundingClientRect();
         if (!e)
             var e = event;
 
         if (e.offsetX) {
-            mouseX = e.offsetX;
-            mouseY = e.offsetY;
+            mouseX = e.offsetX ;
+            mouseY = e.offsetY ;
         }
         else if (e.layerX) {
-            mouseX = e.layerX;
-            mouseY = e.layerY;
+            mouseX = e.layerX ;
+            mouseY = e.layerY ;
         }
      }
 

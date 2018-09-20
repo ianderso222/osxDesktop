@@ -15,6 +15,9 @@ $( ".window" ).draggable({
 
 //css changes
 z = 0;
+
+
+
 $('.overviewClose').click(function(){
 $('.windowOverview').css("display", "none")
 });
@@ -186,6 +189,46 @@ $('.minFolderPaint').css("display", "none")
 });
 $('#iconPaint').click(function(){
 $('.windowPaint').css({
+"display": "block",
+"position": "absolute",
+"z-index": ++z,
+//"position": "absolute",
+//"top": "20%",
+//"left": "80px",
+
+})
+$('.minFolderPaint').css("display", "none")
+});
+//- open window from dock
+$('.minFolderPaint').click(function(){
+$('.windowPaint').css({
+    "display": "block",
+    "z-index": ++z
+})
+$('.minFolderPaint').css("display", "none")
+});
+
+///////////////////////////////
+//Testimonials Window
+//- close window on click x
+$('.testClose').click(function(){
+$('.windowTestimonial').css("display", "none")
+});
+//-minimize overview click - and add folder to dock
+$('.testMin').click(function(){
+$('.windowTestimonial').css("display", "none")
+$('.minFolderTestimonial').css("display", "inline-block")
+$('#dock').css("min-width", "")
+//$('.aboutDesc').css("display", "block")
+});
+//- open on overiew doubleclick and remove folder from dock
+$('#iconTestimonials').click(function(){
+$('.windowTestimonial').css("display", "block")
+$('.minFolder').css("display", "none")
+
+});
+$('#iconTestimonials').click(function(){
+$('.windowTestimonial').css({
 "display": "block",
 "position": "absolute",
 "z-index": ++z,
